@@ -1,0 +1,94 @@
+/*
+
+This stylesheet provides some sample styles to use with Freeow! You may use
+these in your project or create your own!
+
+For my samples, I'm assuming that you will call freeow() on a container with
+the class .freeow applied to it.
+
+The default template function produces markup matching this outline:
+
+	div (classes passed in options get applied here)
+		div.background
+			div.content
+				h2
+				p
+		span.icon
+		span.close
+
+Don't forget: You can make your own template function if this markup doesn't work for your project. The function must accept the title and message as arguments and return a DOM element (the message box).
+
+Update $.fn.freeow.defaults.template or pass the function as the template
+member of the options object when calling freeow().
+
+*/
+
+
+/* Boilerplate -------------------------------------------------------------- */
+
+/* Outermost Container */
+.freeow {
+    position: fixed;
+    width: 278px;
+    z-index: 9999;
+}
+.freeow-top-right {
+    top: 10px;
+    right: 10px;
+}
+.freeow-bottom-right {
+    bottom: 10px;
+    right: 10px;
+}
+.freeow-bottom-left {
+    bottom: 10px;
+    left: 10px;
+}
+
+/* Message */
+.freeow > div {
+    position: relative;
+    margin-top: 10px;
+	cursor: pointer;
+}
+.freeow .content {
+    margin: 8px;
+}
+.freeow h2,
+.freeow p {
+    margin: 0;
+    padding: 0;
+    line-height: 17px;
+
+}
+.freeow .close {
+    position: absolute;
+    display: block;
+    width: 16px;
+    height: 16px;
+    top: 12px;
+    right: 12px;
+    background: transparent url(/assets/images/icons/delete.png) no-repeat 0 0;
+    z-index: 2;
+}
+
+
+/* Specific Styles ---------------------------------------------------------- */
+
+/* Simple */
+.freeow .simple .background {
+	background: #222;
+	padding:4px;
+	opacity:0.85;
+	font-size:85%;
+}
+.freeow .simple .content {
+	color:#fff;
+}
+.freeow h2 {
+    font-size:16px !important;
+	margin-bottom:8px !important;
+}
+.freeow .simple a {
+	color:#fff;
+}

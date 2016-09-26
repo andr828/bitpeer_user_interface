@@ -1,0 +1,367 @@
+Configuration:
+    'Default language': en
+    'Sort keys': true
+    'Output file': translation_(!lang).json
+    'Generate languages':
+        - en
+        - fr
+
+Strings:
+    ABOUT:
+        BODY:
+            en: '(!file+markdown) about_en.md'
+    COMMON:
+        CLICK:
+            HERE:
+                en: 'Click here'
+                cn: '点击此处'
+    FEES:
+            BODY:
+                en: '(!file+markdown) fees_en.md'
+    GENERAL:
+        ACTION:
+            CANCEL:
+                en: Cancel
+                cn: 取消
+        ALERT:
+            ERROR:
+                en: Error!
+                cn: 出错！
+            SUCCESS:
+                en: Success!
+                cn: 成功！
+        AMOUNT:
+            en: Amount
+            cn: 金额
+        BUY:
+            en: Buy
+            cn: 买进
+        FEE:
+            en: Fee
+            cn: 费用
+        HEADER:
+            TIME:
+                en: Time
+                cn: 时间
+            TYPE:
+                en: Type
+                cn: 类型
+        LAST:
+            PRICE:
+                en: 'Last Price'
+                cn: '上次价格'
+        NET:
+            TOTAL:
+                en: 'Net Total'
+                cn: '总净值'
+        NOTICE:
+            LOADING:
+                en: Loading...
+                cn: 加载中...
+        PRICE:
+            en: Price
+            cn: 价格
+        SELL:
+            en: Sell
+            cn: 卖出
+        TOTAL:
+            en: Total
+            cn: 总计
+        NAME:
+            Brand:
+                en: Bitpeer
+                cn: Bitpeer
+            ProductBrand:
+                en: 'Bitpeer Exchange'
+                cn: 'Bitpeer兑换平台'
+    HOME:
+        ACTIVEMARKET:
+            BODY:
+                en: 'Below is a list of all active markets on {{ prodName }}, ordered by 24 hour volume.'
+                cn: '下方是{{ prodName }}的所有活跃市场的列表，按照24小时交易量排序。'
+            HEADER:
+                en: 'Active Markets'
+                cn: '活跃市场'
+            TITLE:
+                Name:
+                    en: 'Name'
+                    cn: '名称'
+                MarketCap:
+                    en: 'Market Cap'
+                    cn: '市场封顶'
+                Price:
+                    en: 'Price'
+                    cn: '价格'
+                DailyVWAP:
+                    en: '24hours VWAP'
+                    cn: '24小时VMAP'
+                AvailableSupply:
+                    en: 'Available Supply'
+                    cn: '可用的供应'
+                DailyVolume:
+                    en: '24hour Volume'
+                    cn: '24小时交易量'
+                DailyChange:
+                    en: '%24hr'
+                    cn: '%24hr'
+                Trade:
+                    en: 'Trade'
+                    cn: '交易'
+            Notice:
+                DisplayingMarkets:
+                    en: 'Displaying markets {{ pageFrom }} - {{ pageTo }} of {{ total}}'
+                    cn: '显示市场{{ pageFrom }} - {{ pageTo }}，共计{{ total}}'
+        SLOGAN:
+            en: 'The fast, secure and anonymous cryptocurrency exchange'
+            cn: '快捷、安全和匿名的加密货币兑换平台'
+        BOTTOMSLOGAN:
+            Header:
+                en: 'Easily Trade Without Revealing Your Identity'
+                cn: '交易简便且无需披露您的身份'
+            Body:
+                en: 'The fast, efficient and secure cryptocurrency exchange.'
+                cn: '快捷、高效和安全的加密货币兑换平台'
+        BUTTON:
+            CallToAction:
+                en: 'Trade Anonymously'
+                cn: '匿名交易'
+            CallToAction2:
+                en: 'Start Now'
+                cn: '现在开始'
+        ADVANTAGE1:
+            Title:
+                en: 'Secure'
+                cn: '安全'
+            Body:
+                en: Excellent security practices keep you safe. And you never need to store your assets with the system over the long haul.
+                cn: 卓越的安全措施保障您的安全。您无需在兑换平台上长时间的存储您的财产。
+        ADVANTAGE2:
+            Title:
+                en: 'Low Fees'
+                cn: '费用低廉'
+            Body:
+                en: 'At just 0.15% per trade for both BUY and SELL orders, we have some of the lowest trading fees in the industry.'
+                cn: '每笔交易买卖双方仅需各自支付0.15%的费用，我们收取业界最低的交易费用。'
+        ADVANTAGE3:
+            Title:
+                en: 'Real-Time Trading'
+                cn: '实时交易'
+            Body:
+                en: 'Our beautiful interface allows you to trade in real-time with live updating prices so you never miss the action.'
+                cn: '我们的用户界面赏心悦目，使您能够以随时更新的价格进行实时交易，而不会错过任何操作'
+    LOGIN:
+        ACCOUNT:
+            en: 'User Login'
+            cn: '用户登录'
+    MARKET:
+        DAY:
+            HIGH:
+                en: '24 Hr High'
+                cn: '24小时高位'
+            LOW:
+                en: '24 Hr Low'
+                cn: '24小时低位'
+            VOLUME:
+                en: '24 Hr Volume'
+                cn: '24小时交易量'
+        HEADER:
+            ActiveOrders:
+                en: 'Your Active Orders'
+                cn: '您的活跃订单'
+            BuyOrders:
+                en: 'Pending Buy Orders'
+                cn: '待处理的买进订单'
+            OrderDepth:
+                en: 'Order Depth'
+                cn: '订单深度'
+            PriceAndVolume:
+                en: Price/Volume
+                cn: 价格/交易量
+            RecentTrades:
+                en: 'Your Recently Completed Trades'
+                cn: '您近期完成的交易'
+            SellOrders:
+                en: 'Pending Sell Orders'
+                cn: '待处理的卖出订单'
+        HINT:
+            SIMULATED:
+                en: Simulated
+                cn: 模拟
+            BETA:
+                en: Beta
+                cn: Beta
+            CHANGE:
+                en: change
+                cn: 更改
+            UP:
+                en: up
+                cn: 上
+            DOWN:
+                en: down
+                cn: 下
+        NOTICE:
+            NoCompletedTrades:
+                en: 'There are no completed trades.'
+                cn: '不存在已完成的交易'
+            'NO':
+                GRAPH:
+                    YET:
+                        en: 'Graph will show when there is a completed trade'
+                        cn: '如果存在已完成的交易，图表将会显示'
+            NoOpenOrders:
+                en: 'There are no open orders.'
+                cn: '不存在开放的订单'
+    MARKETHISTORY:
+        TABLELINE:
+            Price:
+              en: '{{translation.GENERAL_PRICE}}({{baseCurrency}})'
+              cn: '{{translation.GENERAL_PRICE}}({{baseCurrency}})'
+        HEADER:
+            RecentHistory:
+              en: 'Recent Market History'
+              cn: '近期市场历史记录'
+    ORDER:
+        PRICE:
+            PER:
+                CURRENCY:
+                    en: 'Price Per'
+                    cn: '单价'
+        FIELD:
+            MarketOrder:
+                en: 'Market Order'
+                cn: '市场订单'
+            CompoundTrade:
+                en: 'Compound Trade'
+                cn: '复合交易'
+        LABEL:
+            FromCurrencyReturnAddress:
+                en: '{{ fromCurrency }} Return Address'
+                cn: '{{ fromCurrency }}退款地址'
+            ToCurrencyReturnAddress:
+                en: '{{ toCurrency }} Return Address'
+                cn: '{{ toCurrency }}退款地址'
+        BUTTON:
+            SubmitBuyOrder:
+                en: 'Submit Buy Order'
+                cn: '提交买入订单'
+            SubmitSellOrder:
+                en: 'Submit Sell Order'
+                cn: '提交卖出订单'
+    VOLUMEBLOCK:
+        HEADER:
+            TITLE:
+                en: '24 Hour Statistics'
+                cn: '24小时统计'
+
+        TABLELINE:
+            COINDATA:
+                en: '{{coin.Code }} Volume'
+                cn: '{{coin.Code }}交易量'
+        TABLEFOOTER:
+            NumberOfTrades:
+                en: 'Number of Trades'
+                cn: '交易数量'
+    PRICEBLOCK:
+        NOTICE:
+            NoMarketsFound:
+                en: 'No markets found.'
+                cn: '未找到市场'
+    PRICE:
+        BLOCK:
+            TITLE:
+                CHANGE:
+                    en: CHANGE
+                    cn: 更改
+                COIN:
+                    en: COIN
+                    cn: 货币
+            VOLUME:
+                HINT:
+                    en: '24H Vol'
+                    cn: '24小时交易量'
+    SECURITY:
+        BODY:
+            en: '(!file+markdown) security_en.md'
+    SIDEBAR:
+        TITLE:
+            BTC:
+                MARKETS:
+                    en: '{{ baseCurrency }}  Markets'
+                    cn: '{{ baseCurrency }}市场'
+        IRC:
+            Label:
+                en: 'IRC:'
+                cn: 'IRC:'
+    NAVIGATION:
+        LABEL:
+            Home:
+                en: Home
+                cn: 主页
+            Trading:
+                en: Trading
+                cn: 交易
+            Fees:
+                en: Fees
+                cn: 费用
+            About:
+                en: About
+                cn: 关于
+            Security:
+                en: Security
+                cn: 安全
+            API:
+                en: API
+                cn: API
+            Terms:
+                en: Terms
+                cn: 条款
+            Support:
+                en: Support
+                cn: 支持
+            PrivacyPolicy:
+                en: 'Privacy Policy'
+                cn: '隐私政策'
+            TermsOfService:
+                en: 'Terms of Service'
+                cn: '服务条款'
+        CONTROL:
+            ToggleNavigation:
+                en: 'Toggle navigation'
+                cn: '切换导航'
+    FOOTER:
+        TEXT:
+            BrandDescription:
+                en: 'Real-Time Secure Anonymous Professional Cryptocurrency Trading Platform'
+                cn: '实时的、安全的、匿名的、专业的加密货币兑换平台'
+            Copyright:
+                en: '(!markdown) Copyright &copy; 2016 **BitPeer Limited**. All Rights Reserved.'
+            Address:
+                en: '(!file) address_en.md'
+        LABEL:
+            Address:
+                en: Address
+                cn: 地址
+            ContactUs:
+                en: 'Contact Us'
+                cn: '联系我们'
+        EMAILADDRESS:
+            Support:
+                en: support@bitpeer.com
+                cn: support@bitpeer.com
+    ACCESSIBILITY:
+        HINT:
+            BrandLogo:
+                en: 'Bitpeer Logo'
+            Twitter:
+                en: Twitter
+            Facebook:
+                en: Facebook
+            Skype:
+                en: Skype
+            Toggle:
+                en: Toggle
+    TERMS:
+        Privacy:
+            en: '(!file+markdown) privacy_en.md'
+        TOS:
+            en: '(!file+markdown) terms_en.md'

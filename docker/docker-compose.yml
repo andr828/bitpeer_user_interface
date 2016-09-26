@@ -1,0 +1,11 @@
+php-nginx:
+  image: laradock/php56nginx:0.1.0
+  volumes:
+    - ./settings/nginx:/etc/nginx/sites-available
+    - ../site:/var/www
+    - ./logs/nginx:/var/log/nginx
+  privileged: true
+  ports:
+    - "80:80"
+  container_name: bitpeer
+

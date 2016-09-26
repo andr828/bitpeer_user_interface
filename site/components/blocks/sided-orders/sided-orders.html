@@ -1,0 +1,28 @@
+<div class="panel panel-sided-orders">
+    <div class="panel-heading panel-heading-orders-{{ isSellTable ? 'sell':'buy' }}">{{ isSellTable ? translation.MARKET_HEADER_SellOrders: translation.MARKET_HEADER_BuyOrders }}</div>
+    <div class="panel-body">
+        <table class="table" id="sidedOrdersTable">
+            <thead class="uppercase-text">
+            <tr>
+                <th>{{translation.GENERAL_PRICE}} ({{baseCurrency}})</th>
+                <th>{{selectedCurrency}}</th>
+                <th>{{baseCurrency}}</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr ng-if="marketData[0]" ng-repeat="val in marketData" ng-attr-price="{{val.price}}"
+                class="clickableOrder">
+                <td class="price">{{val.price}}
+                </td>
+                <td class="amount">{{val.amount}}
+                </td>
+                <td>{{val.total}}</td>
+            </tr>
+            <tr ng-if="!marketData[0]" id="sidedOrders-noOpenOrders">
+                <td colspan="3">{{ translation.MARKET_NOTICE_NoOpenOrders }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

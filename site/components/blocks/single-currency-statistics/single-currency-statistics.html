@@ -1,0 +1,33 @@
+<div class="table-responsive">
+    <table id="fast-currency-statistics" class="uppercase-text" ng-cloak>
+        <tr id="values">
+            <td>
+                {{ lastSelectedCurrencyPrice | number: 8 }}
+            </td>
+            <td>
+                {{ selectedCurrencyDayHighPrice | number: 8 }}
+            </td>
+            <td>
+                {{ selectedCurrencyDayLowPrice | number: 8 }}
+            </td>
+            <td>
+                {{ selectedCurrencyDayVolume | number: 3 }} {{baseCurrency}}
+            </td>
+        </tr>
+        <tr id="titles">
+            <td>
+                {{ translation.GENERAL_LAST_PRICE }}
+            </td>
+            <td>
+                {{translation.MARKET_DAY_HIGH}}
+            </td>
+            <td>
+                {{translation.MARKET_DAY_LOW}}
+            </td>
+            <td>
+                {{translation.MARKET_DAY_VOLUME}}
+            </td>
+        </tr>
+
+    </table>
+</div>

@@ -1,0 +1,121 @@
+<form ng-init="isMarketOrder = false; showAdvanced = false; totalOrder = 0; expiry = 7; receivingAddress = ''; receivingToken = ''; addressURI=''; isConfirmed=false" class="form-horizontal order-form">
+    <div ng-cloak>
+
+        <input type="hidden" name="source-currency" value="{{ fromCurrency }}">
+        <input type="hidden" name="destination-currency" value="{{ toCurrency }}">
+        <!--input type="hidden" name="destination-currency" value="{{ toCurrency }}" -->
+
+        <div class="form-group  col-lg-12" ng-show="!infunding">
+            <label for="ordered_amount" class="col-lg-3 control-label">{{ translation.GENERAL_AMOUNT }}</label>
+            <div class="input-group" class="col-lg-7">
+                <input type="number" name="amount" value="0.00" class="form-control required" id="ordered_amount"
+                       ng-model="orderAmount" ng-change="totalOrder = (orderAmount * 1) * (orderPrice * 1)"/>
+                <span class="input-group-addon">{{ fromCurrency }} </span>
+            </div>
+        </div>
+
+        <div class="checkbox new-group  col-lg-12"  ng-show="!infunding">
+            <div class="col-lg-3 control-label"></div>
+            <label>
+                <input type="checkbox" ng-model="marketOrder" name="marketOrder" value="marketOrder"
+                       ng-click="isMarketOrder = !isMarketOrder"> {{ translation.ORDER_FIELD_MarketOrder }}
+            </label>
+        </div>
+
+        <div class="form-group new-group  col-lg-12" ng-show="!isMarketOrder && !infunding" >
+            <label for="order_price" class="col-lg-3 control-label">{{ translation.ORDER_PRICE_PER_CURRENCY }} {{ fromCurrency }}</label>
+            <div class="input-group" class="col-lg-7">
+                <input type="number" name="price" value="0.00" class="form-control required" id="order_price"
+                       ng-model="orderPrice"/>
+                <span class="input-group-addon">{{ toCurrency }} </span>
+            </div>
+        </div>
+
+        <div class="form-group  col-lg-12" ng-show="!isMarketOrder && !infunding">
+            <label for="pre-fee-total" class="col-lg-3 control-label">{{ translation.GENERAL_TOTAL }}</label>
+            <div class="input-group" class="col-lg-7">
+                <input id="pre-fee-total" type="text" name="total"
+                       value="{{ (orderAmount * 1) * (orderPrice * 1) | number:5 }}" class="form-control" disabled/>
+                <span class="input-group-addon">{{ toCurrency }} </span>
+            </div>
+        </div>
+
+        <div class="checkbox new-group col-lg-12" ng-if="showAdvanced">
+            <div class="col-lg-3 control-label"></div>
+            <label ng-if="enableAdvancedTrades">
+                <input type="checkbox" name="enable-advanced-trades" value="{{ enableAdvancedTrades }}" checked
+                       ng-click="enableAdvancedTrades = !enableAdvancedTrades">Compound Trade
+            </label>
+            <label ng-if="!enableAdvancedTrades">
+                <input type="checkbox" name="enable-advanced-trades" value="{{ enableAdvancedTrades }}"
+                       ng-click="enableAdvancedTrades = !enableAdvancedTrades">
+                {{ translation.ORDER_FIELD_CompoundTrade }}
+            </label>
+        </div>
+
+
+        <div class="form-group new-group  col-lg-12"  ng-show="!infunding">
+            <label for="from-return-address" class="col-lg-3 control-label">
+                {{ getRealValue(translation.ORDER_LABEL_FromCurrencyReturnAddress)}}</label>
+            <div class="input-group" class="col-lg-7">
+                <input id="from-return-address" ng-model="fromreturnAddress" type="text" name="from-return-address" class="form-control"/>
+                <span class="input-group-addon">@</span>
+            </div>
+        </div>
+
+        <div class="form-group col-lg-12" ng-show="!infunding">
+            <label for="to-return-address" class="col-lg-3 control-label">
+                {{ getRealValue(translation.ORDER_LABEL_ToCurrencyReturnAddress)}}</label>
+            <div class="input-group" class="col-lg-7">
+                <input id="to-return-address" ng-model="toreturnAddress" type="text" name="to-return-address" class="form-control"/>
+                <span class="input-group-addon">@</span>
+            </div>
+        </div>
+
+        <div class="form-group col-lg-12" ng-show="!infunding">
+            <label for="expiry" class="col-lg-3 control-label">
+                Trade Expires In</label>
+            <div id="expiry" class="input-group" class="col-lg-7">
+                <input type="button" class="btn" ng-click="expiry=1" value="1" ng-class="(expiry==1) ? 'boldbutton': ''"/> &nbsp;
+                <input type="button" class="btn" ng-click="expiry=2" value="2" ng-class="(expiry==2) ? 'boldbutton': ''"/> &nbsp;
+                <input type="button" class="btn" ng-click="expiry=3" value="3" ng-class="(expiry==3) ? 'boldbutton': ''"/> &nbsp;
+                <input type="button" class="btn" ng-click="expiry=4" value="4" ng-class="(expiry==4) ? 'boldbutton': ''"/> &nbsp;
+                <input type="button" class="btn" ng-click="expiry=5" value="5" ng-class="(expiry==5) ? 'boldbutton': ''"/> &nbsp;
+                <input type="button" class="btn" ng-click="expiry=6" value="6" ng-class="(expiry==6) ? 'boldbutton': ''"/> &nbsp;
+                <input type="button" class="btn" ng-click="expiry=7" value="7" ng-class="(expiry==7) ? 'boldbutton': ''"/> &nbsp;Days
+            </div>
+        </div>
+
+
+        <div class="form-group col-lg-12" ng-show="!infunding">
+            <input ng-disabled="false" ng-show="orderType == 'sell'" type="button" name="to-return-address" class="btn" ng-click="addressChange(getDepositCurrencyCode());" ng-model="infunding" value="{{ translation.ORDER_BUTTON_SubmitSellOrder }}"/>
+            <input ng-disabled="false" ng-show="orderType == 'buy'" type="button" name="to-return-address" class="btn" ng-click="addressChange(getDepositCurrencyCode());" ng-model="infunding" value="{{ translation.ORDER_BUTTON_SubmitBuyOrder }}"/>
+        </div>
+
+        <div class="col-lg-12" ng-show="infunding">
+
+            To initiate the trade, please deposit <span ng-if="isMarketOrder">at least </span>{{ getTotal() | number:10 }} {{ getDepositCurrencyCode() }}</span>
+             to the following address:
+            <br/>
+
+            <h3 class="fundingaddress">
+                <div class="qr-string">{{ receivingAddress }}&nbsp;</div>
+                <qrcode version="5" error-correction-level="M" size="110" data="{{addressURI}}"></qrcode>
+            </h3>
+
+            The amount includes the brokerage fee of {{ getCommission() | number:10 }} {{ getDepositCurrencyCode()  }}.
+            <br/>
+            <br/>
+
+            <div class="confirmed" ng-show="isConfirmed">Confirmed !</div>
+
+            <div class="form-group col-lg-12" ng-show="infunding">
+                <!--input type="button" name="to-return-address" class="btn" ng-click="buildOrder();orderAmount=0.0; orderPrice=0.0; infunding=false;" value="Confirm the trade"/>&nbsp;OR&nbsp; -->
+                <input ng-show="!isConfirmed" type="button" name="to-return-address" class="btn" ng-click="resetForm()" value="Cancel the trade"/>
+            </div>
+
+        </div>
+
+
+    </div>
+</form>

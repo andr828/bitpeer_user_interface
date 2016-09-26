@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="exchangeApp">
+
+<head>
+    <title>BitPeer</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="UTF-8">
+    <meta name="description" content="Fast, Efficient and Secure Cryptocurrency Exchange Featuring Bitcoin">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="/assets/css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="/assets/css/mobile.css" rel="stylesheet" type="text/css"/>
+    <!-- script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script -->
+
+    <!--<link href="/assets/css/nightmode.css" rel="stylesheet" type="text/css" />-->
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="/assets/images/favicon.ico" rel="icon" type="image/x-icon">
+    <script src="/assets/js/test_data.js"></script>
+    <script src="/bower_components/showdown/compressed/Showdown.min.js"></script>
+    <!-- script src="/bower_components/angular-markdown-directive/markdown.js"></script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.min.js"></script>
+
+
+    <script src="/assets/js/app_home.js"></script>
+    <script src="/assets/js/translations.js"></script>
+    <script src="/controllers/market.js"></script>
+    <script src="/services/backend.js"></script>
+
+    <script src="/components/blocks/market-history/market-history.js"></script>
+    <script src="/components/blocks/coin-selector/coin-selector.js"></script>
+    <script src="/components/blocks/price/price-block.js"></script>
+    <script src="/components/blocks/sided-orders/sided-orders.js"></script>
+    <script src="/components/blocks/single-currency-statistics/single-currency-statistics.js"></script>
+    <script src="/components/blocks/user-trades/user-trades.js"></script>
+    <script src="/components/blocks/volume/volume-block.js"></script>
+    <script src="/components/callouts/currency-pair/currency-pair.js"></script>
+    <script src="/components/sections/sidebar/sidebar.js"></script>
+    <script src="/components/sections/maintenance/maintenance.js"></script>
+    <script src="/components/sections/navigation/navigation.js"></script>
+    <script src="/components/wizards/order-form/order-form.js"></script>
+
+    <script src="/bower_components/qrcode-generator/js/qrcode.js"></script>
+    <script src="/bower_components/qrcode-generator/js/qrcode_UTF8.js"></script>
+    <script src="/assets/js/angular-qrcode.js"></script>
+
+    <script src="/bower_components/wallet-address-validator/dist/wallet-address-validator.min.js"></script>
+
+
+    <style type="text/css">
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="row">
+    <div class="col-lg-12" style="background-color: red; color: white; text-align:center;" >This site is under development. Do not trade on it until development is completed. A notice will be visible here to indicate readiness.
+    </div>
+</div>
+
+<maintenance under-maintenance="maintenanceMode"></maintenance>
+
+<div class="container-fluid"  data-ng-controller="translationController">
+
+    <nav id="header" data-ng-controller="translationController" ng-cloak class="navbar navbar-default">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#site-menu"
+                    aria-expanded="false" ng-click="addClass();">
+                <span class="sr-only">{{ translation.NAVIGATION_CONTROL_ToggleNavigation }}</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/">
+                <img alt="{{ translation.GENERAL_NAME_Brand }}" class="pr-20" src="/assets/images/small_logo_image.png">
+                <img alt="{{ translation.GENERAL_NAME_Brand }}" src="/assets/images/main_logo_image.png">
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="site-menu" ng-class="{'mobileActive':openMbActive}">
+            <ul class="nav navbar-nav">
+                <li role="navigation"><a href="/#/" data-ng-class="home">{{ translation.NAVIGATION_LABEL_Home }}</a></li>
+                <li role="navigation"><a href="/#/market" data-ng-class="market">{{ translation.NAVIGATION_LABEL_Trading }}</a></li>
+                <li role="navigation"><a href="/#/fees" data-ng-class="fees">{{ translation.NAVIGATION_LABEL_Fees }}</a></li>
+                <li role="navigation"><a href="/#/about" data-ng-class="about">{{ translation.NAVIGATION_LABEL_About }}</a></li>
+                <li role="navigation"><a href="/#/security" data-ng-class="security">{{ translation.NAVIGATION_LABEL_Security }}</a></li>
+                <li role="navigation"><a href="/#/api" data-ng-class="apiv2">{{ translation.NAVIGATION_LABEL_API }}</a></li>
+                <li role="navigation"><a href="/#/terms" data-ng-class="terms">{{ translation.NAVIGATION_LABEL_Terms }}</a></li>
+                <li role="navigation"><a ng-href="{{'https://support.'+ prodName +'.com'}}" target="_top">{{ translation.NAVIGATION_LABEL_Support }}</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+
+    <div data-ng-view></div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-lg-4">
+                    <img src="/assets/images/logo_image_transparent.png" alt="{{ translation.ACCESSIBILITY_HINT_BrandLogo }}"/>
+                    <hr/>
+                    <p class="max-width-200">{{ translation.FOOTER_TEXT_BrandDescription }}</p>
+                </div>
+                <div class="col-xs-12 col-lg-4">
+                    <h4>{{ translation.FOOTER_LABEL_Address }}</h4>
+                    <hr/>
+                    <p ng-bind-html= "translation.FOOTER_TEXT_Address"></p>
+                </div>
+                <div class="col-xs-12 col-lg-4 social-block">
+                    <h4>{{ translation.FOOTER_LABEL_ContactUs }}</h4>
+                    <hr/>
+                    <a href="{{ translation.FOOTER_EMAILADDRESS_Support }}">{{ translation.FOOTER_EMAILADDRESS_Support }}</a>
+                    <ul class="nav nav-pills pv-20">
+                        <li><a href="https://twitter.com/bitpeerexchange" target="_blank"><img src="/assets/images/twitter.png" alt="{{ translation.ACCESSIBILITY_HINT_Twitter }}"/></a></li>
+                        <li><a href="https://www.facebook.com/bitpeerexchange" target="_blank"><img src="/assets/images/facebook.png" alt="{{ translation.ACCESSIBILITY_HINT_Facebook }}"/></a></li>
+                    </ul>
+                </div>
+                <div class="text-center col-lg-12">
+                    <ul class="breadcrumb">
+                        <li><a href="#/about">{{ translation.NAVIGATION_LABEL_About }}</a></li>
+                        <li><a href="#/privacy">{{ translation.NAVIGATION_LABEL_PrivacyPolicy }}</a></li>
+                        <li><a href="#/terms">{{ translation.NAVIGATION_LABEL_TermsOfService }}</a></li>
+                    </ul>
+                    <p ng-bind-html="translation.FOOTER_TEXT_Copyright"></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <audio id="newTradeWav" src="/assets/audio/trade.wav" preload="auto"></audio>
+    <script src="/assets/js/autobahn.min.js"></script>
+</body>
+</html>

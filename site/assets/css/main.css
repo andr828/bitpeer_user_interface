@@ -1,0 +1,686 @@
+@charset "utf-8";
+
+
+/* Fonts CSS */
+
+@font-face {
+  font-family: 'AvenirNext_Regular';
+  src: url('../fonts/AvenirNext-Regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/AvenirNext-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/AvenirNext-Regular.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/AvenirNext-Regular.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/AvenirNext-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/AvenirNext-Regular.svg') format('svg'); /* Legacy iOS */  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'AvenirNext_Medium';
+  src: url('../fonts/AvenirNext-Medium.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/AvenirNext-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/AvenirNext-Medium.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/AvenirNext-Medium.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/AvenirNext-Medium.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/AvenirNext-Medium.svg') format('svg'); /* Legacy iOS */  
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvenirNext_Bold';
+  src: url('../fonts/AvenirNext-Bold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/AvenirNext-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/AvenirNext-Bold.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/AvenirNext-Bold.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/AvenirNext-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/AvenirNext-Bold.svg') format('svg'); /* Legacy iOS */  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvenirNext_DemiBold';
+  src: url('../fonts/AvenirNext-DemiBold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/AvenirNext-DemiBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/AvenirNext-DemiBold.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/AvenirNext-DemiBold.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/AvenirNext-DemiBold.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/AvenirNext-DemiBold.svg') format('svg'); /* Legacy iOS */  font-weight: normal;
+  font-style: normal;
+}
+
+/* General */
+body ,
+html{ 
+  margin: 0;
+  padding: 0;
+  font-family: 'AvenirNext_Regular' !important;
+}
+.container{ 
+  max-width: 1070px; 
+}
+.uppercase-text {
+  text-transform: uppercase;
+}
+.panel-heading {
+  font-weight: bold;
+  font-size: 110%;
+}
+body h2{
+  font-family: 'AvenirNext_Bold';
+  font-size: 42px;
+  line-height: normal;
+  letter-spacing: 1.05px;
+}
+body h3 {
+  font-family: 'AvenirNext_Medium';
+  font-size: 23px;
+  line-height: normal;
+  letter-spacing: 0.5px;
+}
+body p{
+  margin: 0 0 20px;
+  font-family: 'AvenirNext_Medium';
+}
+.max-width-200{
+  max-width: 200px;
+}
+.mv-20{
+  margin: 20px 0;
+}
+.pv-20{
+  padding: 20px 0;
+}
+.pr-20{
+  padding-right: 20px;
+}
+.pv-40{
+  padding: 40px 0;
+}
+.blue{
+  color: #3A97BC;
+}
+.red{
+  color: #F23D35 !important;
+}
+
+
+.fundingaddress {
+  vertical-align: middle;
+}
+
+/* Button CSS */
+
+/* white button css */
+.btn.btn-default{
+  border-radius: 20px;
+  text-transform: uppercase;
+  color: #203245;
+  font-size: 14px;
+  padding: 10px 25px;
+  border-color: #ffffff;
+  font-family: 'AvenirNext_Medium';
+  letter-spacing: 1.4px;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+/* green button css */
+.btn.btn-default.btn-success{
+  border-radius: 4px;
+  border-color: transparent;
+  color: #ffffff;
+}
+
+/* Header */
+nav.navbar-default {
+  background: #ffffff;
+  margin-bottom: 0 ;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;   
+  border-bottom: 0;
+}
+nav .navbar-brand{ 
+  padding: 0 100px 0 0;
+  height: auto;
+}
+nav .navbar-brand img {
+  display: inline-block;
+  vertical-align: middle;
+}
+nav#header .navbar-nav > li > a{
+  font-family: 'AvenirNext_Medium';
+  font-size: 14px;
+  line-height: normal;
+  letter-spacing: 0.3px;
+  color: #203245;
+  text-transform: uppercase;
+  padding: 32px 20px;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+nav#header .navbar-nav > li > a:focus, 
+nav#header .navbar-nav > li > a:hover{
+  color: #539bc4;
+}
+nav#header .navbar-right button{
+  margin: 21px;
+}
+
+
+/* Main content CSS */
+.coinline{
+  position: relative;
+  overflow: hidden;
+  background-color: #384E74;
+  color: #ffffff;
+  padding: 10px 70px;
+}
+.coinline ul li a{
+  padding: 0px 15px 0 0;
+}
+.coinline .nav-pills li a:focus,
+.coinline .nav-pills li a:hover{
+  background-color: transparent;
+}
+.coinline ul li a img, 
+.coinline ul li a span {
+  display: inline-block;
+  vertical-align: middle;
+  color: #ffffff;
+  font-size: 10px;
+}
+.coinline ul li a img{
+  padding-right: 3px;
+}
+.banner {
+  position: relative;
+  overflow: hidden;
+  background: url(../images/banner_image_new.png) no-repeat center right;
+  min-height: 570px;
+  color: #ffffff;
+}
+.banner_text{
+  position: absolute;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: auto;
+}
+.banner_text h2{
+  font-family: 'AvenirNext_Bold';
+  font-size: 60px;
+  line-height: normal;
+  letter-spacing: 1.5px;
+}
+.banner_text h3{
+  font-family: 'AvenirNext_Medium';
+  font-size: 23px;
+  line-height: normal;
+  letter-spacing: 0.5px;
+}
+.features{
+  position: relative;
+  overflow: hidden;
+  background-color: #E2F1FB;
+  padding: 90px 0;
+  color: #6c6c6c;
+}
+.features h3{
+  font-family: 'AvenirNext_DemiBold';
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  color: #6c6c6c;
+}
+.features p{
+  font-family: 'AvenirNext_Regular';
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+}
+.activemarkets{
+  position: relative;
+  overflow: hidden;
+  background-color: #ffffff;
+  padding: 70px 0;
+}
+.activemarkets h2{
+  color: #4e9ad0;
+}
+.exchange{
+  position: relative;
+  overflow: hidden;
+  background-color: #81C648;
+  padding: 90px 0;
+  color: #fff;
+}
+.exchange p{
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  color: #ffffff;
+}
+body .table-hover > tbody > tr:hover {
+    background-color: #FFE9EA;
+}
+
+/* footer CSS */
+footer{
+  background: #1B3247;
+  position: relative;
+  overflow: hidden;
+  padding: 40px 0;
+  color: #ffffff;
+}
+
+footer h4{
+  display: table-cell;
+  height: 44px;
+  line-height: 14px;
+  vertical-align: bottom;
+/*  min-height: 34px; 
+*/}
+footer hr {
+  border-color: #539bc4;
+  max-width: 50px;
+  text-align: left;
+  margin: 15px 0 20px;
+}
+footer a{
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+footer a:focus, 
+footer a:hover,
+footer .breadcrumb > li > a:hover,
+footer .breadcrumb > li > a:focus{
+  color: #539bc4;
+  text-decoration: none;
+}
+footer .breadcrumb{
+  background-color: transparent;
+  padding: 40px 0px 0;
+  margin-bottom: 10px;
+  border-radius: 0px;
+  color: #ffffff;
+}
+footer .breadcrumb > li > a{
+  color: #ffffff;
+}
+footer .social-block .nav-pills li a{ 
+  padding: 0px 10px 0px 0;
+}
+footer .social-block .nav-pills li a:focus,
+footer .social-block .nav-pills li a:hover{
+  background-color: transparent;
+}
+
+.boldbutton {
+  font-weight: bold !important;
+  background-color: deepskyblue;
+}
+
+.confirmed {
+  font-weight: bold !important;
+  color: lime;
+  padding-bottom: 1em;
+}
+
+/* Sidebar */
+
+div #sidebar {
+    min-height: 1200px !important;
+    padding: 15px 0;
+}
+
+#sidebar {
+    background-color: #444444;
+}
+
+.price-block {
+    width: 100%;
+    margin: 0 0 2em;
+}
+
+/* Market */
+
+#currency-callout #pair-acronyms {
+    margin-bottom: 0.1em;
+    font-weight: bold;
+    line-height: 90%;
+    font-size: 180%;
+}
+
+#currency-callout #pair-names {
+
+}
+
+.currency-pair-callout {
+    margin-bottom: 0.25em;
+}
+
+#fast-currency-statistics {
+    width: 100%;
+    margin-top: 1em !important;
+}
+
+#fast-currency-statistics #values {
+    font-size: 200%;
+    color: #5bb75b;
+    line-height: 90%;
+}
+
+#fast-currency-statistics #titles {
+    font-size: 80%;
+}
+
+
+#market-data-header {
+    margin-top: 1em;
+    vertical-align: middle;
+}
+
+.label {
+    color: black !important;
+}
+
+.panel-sided-orders {
+    border-color: #ddd !important;
+}
+
+.panel-sided-orders > .panel-heading {
+    color: white;
+}
+
+
+.panel-sided-orders > .panel-heading-orders-sell {
+    background-color: #0000FF;
+
+}
+
+.panel-sided-orders > .panel-heading-orders-buy {
+    background-color: #5bc0de;
+}
+
+
+.panel-history {
+    border-color: #ddd !important;
+}
+
+.panel-history > .panel-heading {
+    color: white;
+    background-color: #5bb75b;
+}
+h3.fundingaddress .qr-string {
+    word-break: keep-all;
+    font-size: 20px;
+    letter-spacing: 0;
+    margin: 0;
+    margin-top: 0.5em !important;
+}
+.currency_form{
+  position: relative;
+  padding: 20px 0 0;
+}
+.currency_form select{
+  -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('/assets/images/icons/toggledown.png');
+    background-repeat: no-repeat;
+    background-position: 98% center;
+}
+
+/* Sidebar */
+
+.toggle-caret {
+    float: right;
+    padding: 0.4em 0;
+
+}
+
+#sidebar {
+    color: white;
+    height: 100% !important;
+}
+
+#sidebar h2 {
+    font-size: 150%;
+    margin: 0 25px;
+    text-align: left;
+}
+
+#sidebar h2 a {
+    color: white;
+    display: block;
+    text-decoration: none;
+}
+
+ul.market {
+list-style: none;
+margin: 0;
+padding: 0px;
+}
+
+ul.market li.title {
+display: block;
+line-height: 8px;
+padding: 0 25px 8px;
+text-decoration: none;
+}
+
+ul.market li.title span {
+color: white !important;
+font-size: 80%;
+font-weight: bold;
+}
+
+ul.market li.total {
+line-height: 30px;
+padding: 0 25px;
+}
+
+ul.market li.total span {
+font-weight: bold;
+width: auto !important;
+}
+
+
+ul.market li a, ul.stats li {
+display: block;
+line-height: 30px;
+padding: 0 25px;
+text-decoration: none;
+}
+
+ul.market li:hover a {
+background: #e9e9e9;
+}
+
+ul.market li.active {
+border: 0;
+}
+
+ul.market li.active a, ul.market li.active:hover a {
+background: #31B086;
+}
+
+ul.market li.changeup a {
+background: #DEF7DF;
+}
+
+ul.market li.changedown a {
+background: #FDE8E8;
+}
+
+ul.market li.active a span {
+color: #fff !important;
+}
+
+ul.market li span {
+ display: inline-block;
+}
+
+ul.market li span.name {
+color: white;
+width: 31%;
+}
+
+ul.market li span.price {
+font-weight: bold;
+width: 38%;
+    color: white;
+}
+
+ul.market li span.change {
+color: white;
+float: right;
+}
+
+span.sell, ul.market li span.down {
+    color: #900;
+}
+
+ul.market li.noresults {
+    color: #888;
+    font-size: 90%;
+    font-style: italic;
+    line-height: 30px;
+    text-align: center;
+}
+
+ul.market li .volume {
+    background: #000;
+    color: #fff;
+    display: none;
+    font-size: 75%;
+    margin-left: 298px;
+    margin-top: -30px;
+    opacity: 0.8;
+    padding: 4px 10px;
+    position: absolute;
+    z-index: 10000;
+}
+
+ul.market li .volume:before{
+    content:'';
+    position:absolute;
+    left:-4px;
+    top:10px;
+    z-index:-1;
+    width:10px;
+    height:10px;
+    -moz-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    transform:rotate(45deg);
+    background: #000;
+}
+
+ul.market li a:hover + .volume {
+    display: block;
+    width: 90px;
+}
+
+/* Order Form */
+
+/* .order-form .input-group {
+    padding-right: 2em;
+}*/
+
+.new-group {
+    padding-top: 1em;
+}
+
+/* Fonts */
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/OpenSans-Regular.eot');
+  src: local('Open Sans'), local('OpenSans'), url('../fonts/OpenSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: normal;
+  src: url('../fonts/OpenSans-Italic.eot');
+  src: local('Open Sans'), local('OpenSans'), url('../fonts/OpenSans-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  src: url('../fonts/OpenSans-Bold.eot');
+  src: local('Open Sans'), local('OpenSans'), url('../fonts/OpenSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: bold;
+  src: url('../fonts/OpenSans-Bold.eot');
+  src: local('Open Sans'), local('OpenSans'), url('../fonts/OpenSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/Roboto-Light.eot');
+  src: local('Roboto'), url('../fonts/Roboto-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Roboto-Regular.eot');
+  src: local('Roboto'), url('../fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/Roboto-Medium.eot');
+  src: local('Roboto'), url('../fonts/Roboto-Medium.ttf') format('truetype');
+}
+
+.aboutCss{
+    width: 800px;
+    margin: 0px auto;
+
+      }
+
+
+.aboutCss h2{
+    text-align: center;
+    font-size: 22px;
+    padding-top: 30px; color: #353944 ;
+}
+.aboutCss ul { margin-top: 30px; }
+.aboutCss ul li { width: 49.5%; display: inline-block; vertical-align: top; margin: 4px 0; padding-right: 10px;
+  list-style: none; background: url(../images/check-mark.png) no-repeat left top; padding-left: 25px; }
+
+.aboutCss ul ~ ul li { background: url(../images/check-mark_blue.png) no-repeat left top;  }
+.aboutCss p { text-align: center; color: #707176 ; }
+
+.feesCss h2{
+    text-align: center;
+    font-size: 22px;
+    padding-top: 30px; color: #353944 ;
+}
+.feesCss p { text-align: center; width: 60%; margin:0 auto; color: #707176; margin-bottom: 20px; }
+.feesCss table { width: 350px; margin:0 auto; text-align: center; border: 1px solid #e6e4e5; border-radius: 5px;
+    border-collapse: inherit; overflow: hidden;}
+.feesCss table th { color: #fff; padding: 6px 5px; text-align: center; text-transform: uppercase;}
+.feesCss table thead { background: #92c35a; }
+.feesCss table td { color: #686868; padding: 6px 5px; text-align: center;}
+.feesCss table td:first-child { font-weight: bold; }

@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/assets/js/amcharts/style.css" type="text/css">
+<script src="/assets/js/amcharts/amcharts.js" type="text/javascript"></script>
+<script src="/assets/js/amcharts/serial.js" type="text/javascript"></script>
+<script src="/assets/js/amcharts/amstock.js" type="text/javascript"></script>
+<script src="/assets/js/chart_candlestick2.js" type="text/javascript"></script>
+<script src="https://www.google.com/jsapi" type="text/javascript"></script>
+<script src="/assets/js/chart_orderdepth.js" type="text/javascript"></script>
+
+
+<div style="clear:right;"></div>
+<div ng-if="!IsNull(trades)">
+    <a href="#"
+       class="btn active inline candlestick1"
+       ng-click="Fn_loadPriceVolum();">{{ translation.MARKET_HEADER_PriceAndVolume }}</a>
+    <a href="#" class="btn inline orderdepth1" ng-click="Fn_loadorderdepth();">{{
+        translation.MARKET_HEADER_OrderDepth }}</a>
+    <div class="chartcontainer">
+        <div class="loading">{{ translation.GENERAL_NOTICE_LOADING }}</div>
+        <div id="chartdiv_candlestick"></div>
+        <div id="chartdiv_orderdepth" style="display: none;"></div>
+    </div>
+</div>
+<div ng-if="IsNull(trades)">
+    <em>{{ translation.MARKET_NOTICE_NO_GRAPH_YET }}</em>
+</div>

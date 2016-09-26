@@ -1,0 +1,110 @@
+@charset "utf-8";
+
+/* General */
+
+body {
+background:#222;
+color:#ccc;
+}
+
+#sidebar {
+background: #222;
+border-right: 1px solid #353535;
+}
+
+ul.market {
+background: #191919;
+border: 1px solid #111;
+color: #ccc;
+}
+
+ul.market li {
+border-top: 1px solid #111;
+}
+
+ul.market li.title {
+background: #111;
+border-bottom: 1px solid #000;
+}
+
+ul.market li.title span {
+color: #999 !important;
+}
+
+ul.market li span.name {
+color: #ccc;
+}
+
+ul.market li span.change {
+color: #999;
+}
+
+ul.market li span.down {
+color: #c0392b;
+}
+
+ul.market li span.up {
+color: #27ae60;
+}
+
+ul.market li.active a {
+background: #008B5D;
+}
+
+#contentinner .stats div.stat {
+border-right: 1px solid #454545;
+}
+
+#contentinner .stats div.stat .title {
+color: #777;
+}
+
+/* Table */
+
+.table {
+border: 1px solid #111;
+}
+
+.table th {
+background: #111;
+border-bottom: 1px solid #000;
+color: #999;
+}
+
+.table td {
+border-bottom:1px solid #1A1A1A;
+}
+
+.table tr:nth-child(even) td {
+background: #1D1D1D;
+}
+
+.table td.none {
+color: #999;
+}
+
+.scrolltable {
+border: 1px solid #111;
+}
+
+/* Warning boxes */
+
+.fail {
+ border: 0;
+ background: #FBEEEB;
+}
+
+.success {
+ border: 0;
+ background: #f0fbeb;
+}
+
+.warning {
+ border: 0;
+ background: #5E553F;
+}
+
+.options {
+ border: 0;
+ background: #161513;
+}

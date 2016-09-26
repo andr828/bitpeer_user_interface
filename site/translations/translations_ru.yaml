@@ -1,0 +1,368 @@
+Configuration:
+    'Default language': en
+    'Sort keys': true
+    'Output file': translation_(!lang).json
+    'Generate languages':
+        - en
+        - fr
+
+Strings:
+    ABOUT:
+        BODY:
+            en: '(!file+markdown) about_en.md'
+            ru: '(!file+markdown) about_ru.md'
+    COMMON:
+        CLICK:
+            HERE:
+                en: 'Click here'
+                ru: 'Нажмите здесь'
+    FEES:
+            BODY:
+                en: '(!file+markdown) fees_en.md'
+                ru: '(!file+markdown) fees_ru.md'
+    GENERAL:
+        ACTION:
+            CANCEL:
+                en: Cancel
+                ru: Отменить
+        ALERT:
+            ERROR:
+                en: Error!
+                ru: Ошибка!
+            SUCCESS:
+                en: Success!
+                ru: Успех!
+        AMOUNT:
+            en: Amount
+            ru: Сумма
+        BUY:
+            en: Buy
+            ru: Купить
+        FEE:
+            en: Fee
+            ru: Комиссия
+        HEADER:
+            TIME:
+                en: Time
+                ru: Время
+            TYPE:
+                en: Type
+                ru: Тип
+        LAST:
+            PRICE:
+                en: 'Last Price'
+                ru: 'Последняя цена'
+        NET:
+            TOTAL:
+                en: 'Net Total'
+                ru: 'Сеть Всего'
+        NOTICE:
+            LOADING:
+                en: Loading...
+                ru: Загружается...
+        PRICE:
+            en: Price
+            ru: Цена
+
+        SELL:
+            en: Sell
+            ru: Продать
+        TOTAL:
+            en: Total
+            ru: Всего
+        NAME:
+            Brand:
+                en: Bitpeer
+            ProductBrand:
+                en: 'Bitpeer Exchange'
+                ru: 'Обменная биржа Bitpeer'
+    HOME:
+        ACTIVEMARKET:
+            BODY:
+                en: 'Below is a list of all active markets on {{ prodName }}, ordered by 24 hour volume.'
+                ru: 'Ниже отображен список всех активных рынков на {{ prodName }}, расположенных по объему за 24 ч.'
+            HEADER:
+                en: 'Active Markets'
+                ru: 'Активные рынки'
+            TITLE:
+                Name:
+                    en: 'Name'
+                    ru: 'Название'
+                MarketCap:
+                    en: 'Market Cap'
+                    ru: 'Рыночная капитализация'
+                Price:
+                    en: 'Price'
+                    ru: 'Цена'
+                DailyVWAP:
+                    en: '24hours VWAP'
+                    ru: '24 часа VWAP'
+                AvailableSupply:
+                    en: 'Available Supply'
+                    ru: 'Запас в наличии'
+                DailyVolume:
+                    en: '24hour Volume'
+                    ru: '24 часа Объем'
+                DailyChange:
+                    en: '%24hr'
+                    ru: '%24ч'
+                Trade:
+                    en: 'Trade'
+                    ru: 'Торговля'
+            Notice:
+                DisplayingMarkets:
+                    en: 'Displaying markets {{ pageFrom }} - {{ pageTo }} of {{ total}}'
+                    ru: 'Отображаемые рынки {{ pageFrom }} - {{ pageTo }} из {{ total}}'
+        SLOGAN:
+            en: 'The fast, secure and anonymous cryptocurrency exchange'
+            ru: 'Быстрая, безопасная и анонимная обменная криптовалютная биржа'
+        BOTTOMSLOGAN:
+            Header:
+                en: 'Easily Trade Without Revealing Your Identity'
+                ru: 'Простая торговля без необходимости раскрывать свою личность'
+            Body:
+                en: 'The fast, efficient and secure cryptocurrency exchange.'
+                ru: 'Быстрая, безопасная и анонимная обменная криптовалютная биржа'
+        BUTTON:
+            CallToAction:
+                en: 'Trade Anonymously'
+                ru: 'Анонимная торговля'
+            CallToAction2:
+                en: 'Start Now'
+                ru: 'Начать сейчас'
+        ADVANTAGE1:
+            Title:
+                en: 'Secure'
+                ru: 'Надежность'
+            Body:
+                en: Excellent security practices keep you safe. And you never need to store your assets with the system over the long haul.
+                ru: Отличные методы безопасности обеспечивают надежную защиту. И Вам не нужно будет хранить свои активы в системе на протижение долгого времени.
+        ADVANTAGE2:
+            Title:
+                en: 'Low Fees'
+                ru: 'Низкие комиссии'
+            Body:
+                en: 'At just 0.15% per trade for both BUY and SELL orders, we have some of the lowest trading fees in the industry.'
+                ru: 'У нас одни из самых низких комиссий во всей индустрии - 0.15% для заказов и на покупку, и на продажу.'
+        ADVANTAGE3:
+            Title:
+                en: 'Real-Time Trading'
+                ru: 'Торговля в режиме реального времени'
+            Body:
+                en: 'Our beautiful interface allows you to trade in real-time with live updating prices so you never miss the action.'
+                ru: 'Красивый интерфейс нашей биржи позволит Вам торговать в режиме реального времени, следя за автоматически обновляющимися ценами, благодаря чему Вы всегда будете в курсе дел.'
+    LOGIN:
+        ACCOUNT:
+            en: 'User Login'
+            ru: 'Логин пользователя'
+
+    MARKET:
+        DAY:
+            HIGH:
+                en: '24 Hr High'
+                ru: '24 ч Высокий'
+            LOW:
+                en: '24 Hr Low'
+                ru: '24 ч Низкий'
+            VOLUME:
+                en: '24 Hr Volume'
+                ru: '24 ч Объем'
+        HEADER:
+            ActiveOrders:
+                en: 'Your Active Orders'
+                ru: 'Ваши активные заказы'
+            BuyOrders:
+                en: 'Pending Buy Orders'
+                ru: 'Ожидающие заказы на покупку'
+            OrderDepth:
+                en: 'Order Depth'
+                ru: 'Глубина заказа'
+            PriceAndVolume:
+                en: Price/Volume
+                ru: Цена/Объем
+            RecentTrades:
+                en: 'Your Recently Completed Trades'
+                ru: 'Недавно совершенные торговые сделки'
+            SellOrders:
+                en: 'Pending Sell Orders'
+                ru: 'Ожидающие заказы на продажу'
+        HINT:
+            SIMULATED:
+                en: Simulated
+                ru: Симулированный
+            BETA:
+                en: Beta
+            CHANGE:
+                en: change
+                ru: изменить
+            UP:
+                en: up
+                ru: вверх
+            DOWN:
+                en: down
+                ru: вниз
+        NOTICE:
+            NoCompletedTrades:
+                en: 'There are no completed trades.'
+                ru: 'Нет завершенных торговых сделок.'
+            'NO':
+                GRAPH:
+                    YET:
+                        en: 'Graph will show when there is a completed trade'
+                        ru: 'Когда торговая сделка будет совершена, Вы увидите график'
+            NoOpenOrders:
+                en: 'There are no open orders.'
+                ru: 'Нет открытых заказов'
+    MARKETHISTORY:
+        TABLELINE:
+            Price:
+              en: '{{translation.GENERAL_PRICE}}({{baseCurrency}})'
+        HEADER:
+            RecentHistory:
+              en: 'Recent Market History'
+              ru: 'Недавняя история рынка'
+    ORDER:
+        PRICE:
+            PER:
+                CURRENCY:
+                    en: 'Price Per'
+                    ru: 'Цена за'
+        FIELD:
+            MarketOrder:
+                en: 'Market Order'
+                ru: 'Рыночный заказ'
+            CompoundTrade:
+                en: 'Compound Trade'
+                ru: 'Совместная торговля'
+        LABEL:
+            FromCurrencyReturnAddress:
+                en: '{{ fromCurrency }} Return Address'
+                ru: '{{ fromCurrency }} Адрес возврата'
+            ToCurrencyReturnAddress:
+                en: '{{ toCurrency }} Return Address'
+                ru: '{{ toCurrency }} Адрес возврата'
+        BUTTON:
+            SubmitBuyOrder:
+                en: 'Submit Buy Order'
+                ru: 'Разместить заказ на покупку'
+            SubmitSellOrder:
+                en: 'Submit Sell Order'
+                ru: 'Разместить заказ на продажу'
+    VOLUMEBLOCK:
+        HEADER:
+            TITLE:
+                en: '24 Hour Statistics'
+                ru: '24 ч Статистика'
+        TABLELINE:
+            COINDATA:
+                en: '{{coin.Code }} Volume'
+                ru: '{{coin.Code }} Объем'
+        TABLEFOOTER:
+            NumberOfTrades:
+                en: 'Number of Trades'
+                ru: 'Количество торговых сделок'
+    PRICEBLOCK:
+        NOTICE:
+            NoMarketsFound:
+                en: 'No markets found.'
+                ru: 'Не найдено рынков.'
+    PRICE:
+        BLOCK:
+            TITLE:
+                CHANGE:
+                    en: CHANGE
+                    ru: ИЗМЕНИТЬ
+                COIN:
+                    en: COIN
+                    ru: КОЙН
+            VOLUME:
+                HINT:
+                    en: '24H Vol'
+                    ru: '24ч Объем'
+    SECURITY:
+        BODY:
+            en: '(!file+markdown) security_en.md'
+            ru: '(!file+markdown) security_ru.md'
+    SIDEBAR:
+        TITLE:
+            BTC:
+                MARKETS:
+                    en: '{{ baseCurrency }}  Markets'
+                    ru: '{{ baseCurrency }} Рынки'
+        IRC:
+            Label:
+                en: 'IRC:'
+    NAVIGATION:
+        LABEL:
+            Home:
+                en: Home
+                ru: Главная
+            Trading:
+                en: Trading
+                ru: Торговля
+            Fees:
+                en: Fees
+                ru: Комиссии
+            About:
+                en: About
+                ru: О нас
+            Security:
+                en: Security
+                ru: Безопасность
+            API:
+                en: API
+            Terms:
+                en: Terms
+                ru: Условия
+            Support:
+                en: Support
+                ru: Поддержка
+            PrivacyPolicy:
+                en: 'Privacy Policy'
+                ru: 'Политика конфиденциальности'
+            TermsOfService:
+                en: 'Terms of Service'
+                ru: 'Условия использования'
+        CONTROL:
+            ToggleNavigation:
+                en: 'Toggle navigation'
+                ru: 'Переключение навигации'
+    FOOTER:
+        TEXT:
+            BrandDescription:
+                en: 'Real-Time Secure Anonymous Professional Cryptocurrency Trading Platform'
+                ru: 'Работающая в режиме реального времени, безопасная, ная и профессиональная платформа для торговли криптовалютой'
+            Copyright:
+                en: '(!markdown) Copyright &copy; 2016 **BitPeer Limited**. All Rights Reserved.'
+                ru: '(!markdown) Copyright &copy; 2016 **BitPeer Limited**. Все права защищены.'
+            Address:
+                en: '(!file) address_en.md'
+                ru: '(!file) address_ru.md'
+        LABEL:
+            Address:
+                en: Address
+                ru: Адрес
+            ContactUs:
+                en: 'Contact Us'
+                ru: 'Связаться с нами'
+        EMAILADDRESS:
+            Support:
+                en: support@bitpeer.com
+    ACCESSIBILITY:
+        HINT:
+            BrandLogo:
+                en: 'Bitpeer Logo'
+            Twitter:
+                en: Twitter
+            Facebook:
+                en: Facebook
+            Skype:
+                en: Skype
+            Toggle:
+                en: Toggle
+    TERMS:
+        Privacy:
+            en: '(!file+markdown) privacy_en.md'
+            ru: '(!file+markdown) privacy_ru.md'
+        TOS:
+            en: '(!file+markdown) terms_en.md'

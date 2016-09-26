@@ -1,0 +1,10 @@
+<a>
+    <span class="name">{{coin.Code}}<span class="fa fa-warning" style="padding-left: 0.5em; color: red; font-size: 80%" ng-if="coin.State.Simulated" alt="{{ translation.MARKET_HINT_SIMULATED }}"></span><span class="fa fa-warning" style="padding-left: 0.5em; color: orange; font-size: 80%" ng-if="coin.State.Beta" alt="{{ translation.MARKET_HINT_BETA }}"></span></span>
+    <span class="price">{{coin.price | number: 5}}</span>
+    <span   ng-if="coin.change != null"
+            ng-attr-class="{{'change ' + ((coin.change > 0 || btc.change.substr(0,1) == '>')?'up': coin.change < 0 ?'down':'')}}"
+            ng-attr-id="{{btc.market_id}}">{{coin.change + '%'}}</span>
+</a>
+<div class="volume">{{translation.PRICE_BLOCK_VOLUME_HINT}}: {{coin.volume | number: 3}} {{coin.Code}}
+</div>
+</a>

@@ -1,0 +1,75 @@
+<div id="yourOrders1" ng-if="userOrders[0]" ng-cloak>
+    <h2>{{ translation.MARKET_HEADER_ActiveOrders }}</h2>
+    <div class="scrolltable uppercase-text">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>{{ translation.GENERAL_HEADER_TIME }}</th>
+                <th>{{ translation.GENERAL_HEADER_TYPE }}</th>
+                <th ng-bind="selectedCurrency + ' AMOUNT'"></th>
+                <th>{{ translation.GENERAL_PRICE }} ({{baseCurrency}})</th>
+                <th>{{baseCurrency}} {{ translation.GENERAL_TOTAL }}</th>
+                <th>{{ translation.GENERAL_FEE }}</th>
+                <th>{{baseCurrency}} {{ translation.GENERAL_NET_TOTAL }}</th>
+                <th></th>
+            </tr>
+            </thead>
+
+            <tr ng-repeat="userOrder in userOrders">
+                <td>{{userOrder.time }}</td>
+                <td><span class="type">
+                <strong>{{ userOrder.price ? {{ translation.GENERAL_SELL }} : {{ translation.GENERAL_BUY }}}}</strong></span>
+                </td>
+                <td>{{userOrder.amount}}</td>
+                <td>{{userOrder.price}}</td>
+                <td>{{userOrder.total}}</td>
+                <td>{{userOrder.fee}}</td>
+                <td>0</td>
+                <td align="right" ng-click="Click_CancelOrder(userOrder);">
+                    <a class="btn inline cancelOrder" href="#" ng-attr-orderId="{{userOrder.order_id}}">
+                        <img src="/assets/images/icons/delete.png"
+                             alt="{{ translation.GENERAL_ACTION_CANCEL }}" class="2x" width="16"/>&nbsp;
+                        {{ translation.GENERAL_ACTION_CANCEL }}
+                    </a>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+
+<!-- <div id="yourOrders" <?php if (!isset($userOrders[0])) { ?>style="display: none;"<?php } ?>>
+  <h2>Your Active Orders</h2>
+  <div class="scrolltable">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>TIME</th>
+          <th>TYPE</th>
+          <th>{{ selectedCurrency }} AMOUNT</th>
+          <th>PRICE ({{ baseCurrency }})</th>
+          <th>{{ baseCurrency }} TOTAL</th>
+          <th>FEE</th>
+          <th>{{ baseCurrency }} NET TOTAL</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        foreach ($userOrders AS $value) {
+            echo '<tr>';
+            echo '<td>' . date("Y-m-d H:i:s", $value['time']) . '</td>';
+            echo '<td><span class="type"><strong>' . ($value['type'] ? '{{ translation.GENERAL_SELL }}' : '{{ translation.GENERAL_BUY }}') . '</strong></span></td>';
+            echo '<td>' . $value['amount'] . '</td>';
+            echo '<td>' . $value['price'] . '</td>';
+            echo '<td>' . $value['total'] . '</td>';
+            echo '<td>' . $value['fee'] . '</td>';
+            echo '<td>' . $value['net_total'] . '</td>';
+            echo '<td align="right"><a class="btn inline cancelOrder" href="#" orderId="' . $value['order_id'] . '"><img src="/assets/images/icons/delete.png" alt="{{ translation.GENERAL_ACTION_CANCEL }}" class="2x" width="16" />&nbsp; Cancel</a></td>';
+            echo '</tr>';
+        }
+        ?>
+      </tbody>
+    </table>
+  </div>
+</div> -->

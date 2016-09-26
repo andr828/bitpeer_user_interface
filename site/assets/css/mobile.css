@@ -1,0 +1,130 @@
+/* Mobile */
+
+@media only screen and (max-width: 1300px) {
+
+.hide1300 { display: none !important; }
+.show1300 { display: block !important; }
+
+#content .stats div.stat {
+font-size: 120%;
+padding: 0 20px;
+}
+
+#content .stats div.stat .title {
+font-size: 85%;
+line-height: 125%;
+}
+
+#content .marketheader h2 {
+font-size: 110%;
+}
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+.hide1200 { display: none !important; }
+.show1200 { display: block !important; }
+
+}
+
+@media only screen and (max-width: 1150px) {
+
+#header { position: static; }
+#content { padding-top: 0; }
+
+#logo { border: 0; }
+
+#logo a {
+width:170px;
+}
+
+#logo a span {
+width:170px;
+}
+
+#logo + .nav { float: right; }
+
+.normalnav { display: none; }
+.mobilenav { display: inline-block; }
+
+.quicknav {
+background: #454545;
+display: block;
+padding: 18px;
+margin-right: 15px;
+}
+
+.quicknav:hover {
+cursor: pointer;
+}
+
+body { overflow-x: hidden; }
+
+#contentinner { margin-left: 0; }
+.content-mobile {
+width: 100%;
+position: relative;
+}
+.content-mobile #contentinner {
+margin-left: 300px !important;
+position: absolute;
+width: 100%;
+}
+
+}
+
+@media only screen and (max-width: 960px) {
+
+.hide960 { display: none !important; }
+.show960 { display: block !important; }
+
+}
+
+@media only screen and (max-width: 800px) {
+nav#header .navbar-nav > li > a{ padding: 32px 18px; }
+.hide800 { display: none !important; }
+.show800 { display: block !important; }
+
+body.home #contentinner .topbanner h3 {
+font-size: 170%;
+}
+
+}
+@media (min-width: 1025px) and (max-width: 1199px) {
+	nav#header .navbar-nav > li > a{ padding: 32px 15px; }
+}
+@media (min-width: 992px) and (max-width: 1024px) {
+	#fast-currency-statistics tbody tr td { padding: 0 15px; }
+	#fast-currency-statistics tbody tr td:first-child{ padding-left: 0; }
+	nav#header .navbar-nav > li > a{ padding: 32px 13px; }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	#fast-currency-statistics tbody tr td { padding: 0 15px; }
+	#fast-currency-statistics tbody tr td:first-child{ padding-left: 0; }
+	nav .navbar-collapse.collapse{ float: right; }
+	nav .navbar-collapse.collapse,
+	nav .navbar-brand{ padding: 0; }
+	.navbar-brand > img.pr-20{ padding-right: 0; }
+	nav#header .navbar-nav > li > a{ padding: 32px 8px; }
+}
+@media only screen and (max-width: 767px) {
+	#sidebar, .sidebar-close { display: none; }
+	.mobileActive.collapse{ display: block; }
+	nav.navbar-default .navbar-toggle{ margin-top: 26px; margin-bottom: 25px; }
+	nav.navbar-default .navbar-toggle { border-color: #224375; }
+	nav.navbar-default .navbar-toggle .icon-bar { background-color: #224375; }
+	nav.navbar-default .navbar-toggle:focus,
+	nav.navbar-default .navbar-toggle:hover { background-color: #224375; }
+	nav.navbar-default .navbar-toggle:focus .icon-bar,
+	nav.navbar-default .navbar-toggle:hover .icon-bar{ background-color: #ffffff; }
+	nav#header .navbar-nav > li > a{ padding: 15px; }
+	body .table-responsive{ border: none; }
+	#fast-currency-statistics tbody tr td { padding: 0 15px; }
+	#fast-currency-statistics tbody tr td:first-child{ padding-left: 0; }
+}
+@media only screen and (max-width: 480px) {
+	nav .navbar-brand { padding: 0 10px 0 0; }
+	#fast-currency-statistics #values { font-size: 120%; }
+	
+}

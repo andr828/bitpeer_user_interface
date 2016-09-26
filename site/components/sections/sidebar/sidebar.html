@@ -1,0 +1,8 @@
+<div id="sidebar" ng-controller="sidebar-controller" style="height:auto">
+
+    <price-block coin-description-array="coinDescriptionArray" translation="translation" 
+                 set-current-coin-function="setSelectedCurrencyFunction(coinToSelect)" 
+                 base-currency="{{ baseCurrency }}"></price-block>
+    <volume-block coin-description-array="coinDescriptionArray" number-of-trades="numberOfTrades" translation="translation"></volume-block>
+
+</div>

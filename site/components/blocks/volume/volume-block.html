@@ -1,0 +1,22 @@
+<div ng-init="volumeBlockShowing = true" ng-cloak>
+    <h2><a ng-click="volumeBlockShowing = !volumeBlockShowing">{{translation.VOLUMEBLOCK_HEADER_TITLE}}
+
+        <img ng-if="!volumeBlockShowing" src="/assets/images/icons/toggledown.png" class="toggle-caret" alt="{{ translation.ACCESSIBIITY_HINT_Toggle }}"/>
+        <img ng-if="volumeBlockShowing" src="/assets/images/icons/toggleup.png" class="toggle-caret" alt="{{ translation.ACCESSIBIITY_HINT_Toggle }}"/></a></h2>
+    <div ng-show="volumeBlockShowing">
+
+        <ul class="market stats" id="sidebarStats">
+
+            <li ng-repeat="coin in coinDescriptionArray" ng-attr-class="active"
+                ng-click="setCoinContext(coin)">
+                {{getRealValue(translation.VOLUMEBLOCK_TABLELINE_COINDATA,coin) }}
+                 <span class="change"><span
+                    class="sidebarBTC">{{ coin.volume }}</span> {{ coin.Code }}</span>
+            </li>
+
+            <li>{{ translation.VOLUMEBLOCK_TABLEFOOTER_NumberOfTrades }}<span class="sidebarTrades change">&nbsp;{{ numberOfTrades }}</span></li>
+
+        </ul>
+
+    </div>
+</div>

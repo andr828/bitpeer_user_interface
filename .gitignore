@@ -1,0 +1,12 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/*
+.idea/deployment.xml
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/modules.xml
+.idea/bitpeer_user_interface.iml
+.idea/
+git
+
+/docker/logs/nginx/access.log
+/docker/logs/nginx/error.log

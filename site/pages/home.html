@@ -1,0 +1,386 @@
+<div id="content">
+
+    <section class="coinline" style="display: none">
+        <ul class="nav nav-pills">
+            <li>
+                <a href="#">
+                    <img src="/assets/images/coins/coin1.png" alt="coin1"/>
+                    <span><strong>BTC</strong><br/>$572,.10000<br/><span class="red">-0.4%</span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/assets/images/coins/coin2.png" alt="coin1"/>
+                    <span><strong>BTC</strong><br/>$572,.10000<br/><span class="red">-0.4%</span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/assets/images/coins/coin3.png" alt="coin1"/>
+                    <span><strong>BTC</strong><br/>$572,.10000<br/><span class="red">-0.4%</span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/assets/images/coins/coin1.png" alt="coin1"/>
+                    <span><strong>BTC</strong><br/>$572,.10000<br/><span class="red">-0.4%</span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/assets/images/coins/coin2.png" alt="coin1"/>
+                    <span><strong>BTC</strong><br/>$572,.10000<br/><span class="red">-0.4%</span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/assets/images/coins/coin7.png" alt="coin1"/>
+                    <span><strong>BTC</strong><br/>$572,.10000<br/><span class="red">-0.4%</span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/assets/images/coins/coin4.png" alt="coin1"/>
+                    <span><strong>BTC</strong><br/>$572,.10000<br/><span class="red">-0.4%</span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/assets/images/coins/coin5.png" alt="coin1"/>
+                    <span><strong>BTC</strong><br/>$572,.10000<br/><span class="red">-0.4%</span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/assets/images/coins/coin6.png" alt="coin1"/>
+                    <span><strong>BTC</strong><br/>$572,.10000<br/><span class="red">-0.4%</span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/assets/images/coins/coin4.png" alt="coin1"/>
+                    <span><strong>BTC</strong><br/>$572,.10000<br/><span class="red">-0.4%</span></span>
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <section class="banner">
+
+        <div class="container">
+            <div class="banner_text">
+                <h2>{{ translation.GENERAL_NAME_ProductBrand }}</h2>
+
+                <h3>{{ translation.HOME_SLOGAN }}</h3>
+                <a href="#/market" class="btn btn-default mv-20">{{ translation.HOME_BUTTON_CallToAction }}</a>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="features">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 text-center">
+                    <div class="icon">
+                        <img src="/assets/images/feature_icon1.png" alt="{{translation.HOME_ADVANTAGE1_Title}}"/>
+                    </div>
+                    <h3>{{translation.HOME_ADVANTAGE1_Title}}</h3>
+
+                    <p>{{translation.HOME_ADVANTAGE1_Body}}</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="icon">
+                        <img src="/assets/images/feature_icon2.png" alt="{{translation.HOME_ADVANTAGE2_Title}}"/>
+                    </div>
+                    <h3>{{translation.HOME_ADVANTAGE2_Title}}</h3>
+
+                    <p>{{translation.HOME_ADVANTAGE2_Body}}</p>
+
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="icon">
+                        <img src="/assets/images/feature_icon_realtime.png" alt="{{translation.HOME_ADVANTAGE3_Title}}"/>
+                    </div>
+                    <h3>{{translation.HOME_ADVANTAGE3_Title}}</h3>
+
+                    <p>{{translation.HOME_ADVANTAGE3_Body}}</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="activemarkets" style="display: none">
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-xs-12 col-sm-12 text-center">
+                    <h2>{{translation.HOME_ACTIVEMARKET_TITLE}}</h2>
+                </div>
+
+                <div class="col-xs-12 col-sm-8">
+                    <p class="pv-40">{{translation.HOME_ACTIVEMARKET_BODY}}</p>
+                </div>
+
+                <div class="col-xs-12 col-sm-4">
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tbody>
+                            <tr>
+                                <th>24 HR BTC Volume
+                                </td>
+                                <td class="blue" align="right"><strong>{{btcVolume}} BTC</strong></td>
+                            </tr>
+                            <tr>
+                                <th>24 HR LTC Volume
+                                </td>
+                                <td class="blue" align="right"><strong>{{ltcVolume}} LTC</strong></td>
+                            </tr>
+                            <tr>
+                                <th>{{ translation.VOLUMEBLOCK_TABLEFOOTER_NumberOfTrades }}
+                                </td>
+                                <td class="blue" align="right"><strong>{{trades}}</strong></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- <ul class="market stats right">
+                         <li>24 HR BTC Volume <span class="change"><span class="sidebarBTC">{{btcVolume}}</span>BTC</span></li>
+                         <li>24 HR LTC Volume <span class="change"><span
+                                     class="sidebarLTC">{{ltcVolume}}</span>LTC</span></li>
+                         <li>Number of Trades <span class="sidebarTrades change">{{trades}}</span></li>
+                     </ul>-->
+                </div>
+                <div class="clearfix"></div>
+
+                <div class="col-xs-12 col-sm-12">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover" width="100%">
+                            <thead>
+                            <tr>
+                                <th align="right">#</th>
+                                <th align="left">Name</th>
+                                <th align="right">Market Cap</th>
+                                <th align="right">Price</th>
+                                <th align="right">24hours VWAP</th>
+                                <th align="right">Available Supply</th>
+                                <th align="right">24hour Volume</th>
+                                <th align="right">%24hr</th>
+                                <th align="right">Trade</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td align="right">379</td>
+                                <td><img src="/assets/images/table_coins_images/coin1.png" alt="coin1"/>&nbsp;42 Coin 42
+                                </td>
+                                <td>$3,581</td>
+                                <td class="red">$50.53530000</td>
+                                <td class="red">$50.5353</td>
+                                <td>7,087,177,342</td>
+                                <td>$0</td>
+                                <td><img src="/assets/images/chart1.png" alt="chart"></td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>379</td>
+                                <td><img src="/assets/images/table_coins_images/coin2.png" alt="coin2"/>&nbsp;42 Coin 42
+                                </td>
+                                <td>$3,581</td>
+                                <td class="red">$50.53530000</td>
+                                <td class="red">$50.5353</td>
+                                <td>7,087,177,342</td>
+                                <td>$0</td>
+                                <td><img src="/assets/images/chart2.png" alt="chart2"></td>
+                                <td>Buy / Sell</td>
+                            </tr>
+                            <tr>
+                                <td>379</td>
+                                <td><img src="/assets/images/table_coins_images/coin2.png" alt="coin2"/>&nbsp;42 Coin 42
+                                </td>
+                                <td>$3,581</td>
+                                <td class="red">$50.53530000</td>
+                                <td class="red">$50.5353</td>
+                                <td>7,087,177,342</td>
+                                <td>$0</td>
+                                <td><img src="/assets/images/chart2.png" alt="chart2"></td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>379</td>
+                                <td><img src="/assets/images/table_coins_images/coin2.png" alt="coin2"/>&nbsp;42 Coin 42
+                                </td>
+                                <td>$3,581</td>
+                                <td class="red">$50.53530000</td>
+                                <td class="red">$50.5353</td>
+                                <td>7,087,177,342</td>
+                                <td>$0</td>
+                                <td><img src="/assets/images/chart1.png" alt="chart1"></td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>379</td>
+                                <td><img src="/assets/images/table_coins_images/coin2.png" alt="coin2"/>&nbsp;42 Coin 42
+                                </td>
+                                <td>$3,581</td>
+                                <td class="red">$50.53530000</td>
+                                <td class="red">$50.5353</td>
+                                <td>7,087,177,342</td>
+                                <td>$0</td>
+                                <td><img src="/assets/images/chart3.png" alt="chart3"></td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="tablemetadata"></div>
+
+                <script src="/assets/js/richhtml/mustache.js" type="text/javascript"></script>
+                <script src="/assets/js/richhtml/rich.base.js" type="text/javascript"></script>
+                <script src="/assets/js/richhtml/rich.grid.js" type="text/javascript"></script>
+                <link href="/assets/js/richhtml/css/rich.grid.css" rel="stylesheet" type="text/css"/>
+
+                <script type="text/javascript">
+                    $(document).ready(function () {
+
+                        // Setup the ticket grid
+                        ticketGrid = new RichHTML.grid({
+                            el: 'ticketGrid',
+                            tableclass: 'table',
+                            url: '/action/getMarkets',
+                            emptyText: 'There are no markets to display',
+                            baseParams: {
+                                limit: 30,
+                                start: 0
+                            },
+                            root: 'data',
+                            totalProperty: 'totalCount',
+                            columns: [
+                                {
+                                    text: "Market",
+                                    dataIndex: "code",
+                                    align: "center",
+                                    sortable: true,
+                                    renderer: function (text, row, el) {
+                                        return '<a href="/market/' + row.code + '/' + row.exchange + '">' + row.code + '/' + row.exchange + '</a>';
+                                    }
+                                },
+                                {
+                                    text: "Coin Name",
+                                    dataIndex: "coin",
+                                    align: "center",
+                                    sortable: true
+                                },
+                                {
+                                    text: "Last Price",
+                                    dataIndex: "last_price",
+                                    align: "center",
+                                    sortable: true
+                                },
+                                {
+                                    text: "Change",
+                                    dataIndex: "change",
+                                    align: "center",
+                                    sortable: true,
+                                    renderer: function (text, row, el) {
+                                        if (row.change > 0) {
+                                            return '<span class="up">' + row.change + '%</span>';
+                                        } else if (row.change < 0) {
+                                            return '<span class="down">' + row.change + '%</span>';
+                                        } else {
+                                            return row.change + '%';
+                                        }
+                                    }
+                                },
+                                {
+                                    text: "24 Hr Volume",
+                                    dataIndex: "24hvol",
+                                    align: "center",
+                                    sortable: true,
+                                    renderer: function (text, row, el) {
+                                        return row['24hvol'] + ' BTC';
+                                    }
+                                },
+                                {
+                                    text: "24 Hr High",
+                                    dataIndex: "24hhigh",
+                                    align: "center",
+                                    class: "hide960",
+                                    sortable: true,
+                                },
+                                {
+                                    text: "24 Hr Low",
+                                    dataIndex: "24hlow",
+                                    align: "center",
+                                    class: "hide960",
+                                    sortable: true
+                                },
+                                {
+                                    text: "Top Bid",
+                                    dataIndex: "top_bid",
+                                    align: "center",
+                                    class: "hide1200",
+                                    sortable: true,
+                                },
+                                {
+                                    text: "Top Ask",
+                                    dataIndex: "top_ask",
+                                    align: "center",
+                                    class: "hide1200",
+                                    sortable: true
+                                }]
+                        });
+
+                        // Bind to some grid events
+                        $(ticketGrid).bind({
+                            // Loading data
+                            "load": function (event, data) {
+                                if (data.paging.start == null) {
+                                    var paging = "Displaying markets 0 - 0 of 0<br />";
+                                } else {
+                                    var paging = "Displaying markets " + (data.paging.start + 1) + " - " + (data.paging.start + data.paging.items) + " of " + data.paging.totalItems + "<br />";
+                                }
+                                // Setup the paging information
+                                $('#tablemetadata').html(paging);
+
+                                setTimeout(function () {
+                                    ticketGrid.reload();
+                                }, 60000);
+                            }
+                        });
+
+                        ticketGrid.render();
+
+                    });
+
+                </script>
+                <div id="ticketGrid"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="exchange">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-xs-12 text-center">
+                    <h2>{{translation.HOME_BOTTOMSLOGAN_Header}}</h2>
+
+                    <p>{{translation.HOME_BOTTOMSLOGAN_Body}}</p>
+                    <a href="/#/market" class="btn btn-default mv-20">{{translation.HOME_BUTTON_CallToAction2}}</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+</div>

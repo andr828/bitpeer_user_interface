@@ -1,0 +1,378 @@
+Configuration:
+    'Default language': en
+    'Sort keys': true
+    'Output file': translation_(!lang).json
+    'Generate languages':
+        - en
+        - fr
+
+Strings:
+    ABOUT:
+        BODY:
+            en: '(!file+markdown) about_en.md'
+            hu: '(!file+markdown) about_en.md'
+    COMMON:
+        CLICK:
+            HERE:
+                en: 'Click here'
+                hu: 'Kattints ide'
+    FEES:
+            BODY:
+                en: '(!file+markdown) fees_en.md'
+                hu: '(!file+markdown) fees_hu.md'
+    GENERAL:
+        ACTION:
+            CANCEL:
+                en: Cancel
+                hu: Mégse
+        ALERT:
+            ERROR:
+                en: Error!
+                hu: Hiba!
+            SUCCESS:
+                en: Success!
+                hu: Sikeres!
+        AMOUNT:
+            en: Amount
+            hu: Mennyiség
+        BUY:
+            en: Buy
+            hu: Vétel
+        FEE:
+            en: Fee
+            hu: Díj
+        HEADER:
+            TIME:
+                en: Time
+                hu: Idő
+            TYPE:
+                en: Type
+                hu: Típus
+        LAST:
+            PRICE:
+                en: 'Last Price'
+                hu: 'Legutóbbi Ár'
+        NET:
+            TOTAL:
+                en: 'Net Total'
+                hu: 'Nettó Összesen'
+        NOTICE:
+            LOADING:
+                en: Loading...
+                hu: Betöltés…
+        PRICE:
+            en: Price
+            hu: Ár
+        SELL:
+            en: Sell
+            hu: Eladás
+        TOTAL:
+            en: Total
+            hu: Összes
+        NAME:
+            Brand:
+                en: Bitpeer
+                hu: Bitpeer
+            ProductBrand:
+                en: 'Bitpeer Exchange'
+                hu: 'Bitpeer Exchange'
+    HOME:
+        ACTIVEMARKET:
+            BODY:
+                en: 'Below is a list of all active markets on {{ prodName }}, ordered by 24 hour volume.'
+                hu: 'Lejjebb található egy lista az összes elérhető piacról {{ prodName }}, az elmúlt 24 órából.'
+            HEADER:
+                en: 'Active Markets'
+                hu: 'Aktív Piacok'
+            TITLE:
+                Name:
+                    en: 'Name'
+                    hu: 'Név'
+                MarketCap:
+                    en: 'Market Cap'
+                    hu: 'Piaci Tőke'
+                Price:
+                    en: 'Price'
+                    hu: 'Ár'
+                DailyVWAP:
+                    en: '24hours VWAP'
+                    hu: '24 órás VWAP'
+                AvailableSupply:
+                    en: 'Available Supply'
+                    hu: 'Elérhető Készlet'
+                DailyVolume:
+                    en: '24hour Volume'
+                    hu: '24 órás Volume'
+                DailyChange:
+                    en: '%24hr'
+                    hu: '%24hr'
+                Trade:
+                    en: 'Trade'
+                    hu: 'Kereskedés'
+            Notice:
+                DisplayingMarkets:
+                    en: 'Displaying markets {{ pageFrom }} - {{ pageTo }} of {{ total}}'
+                    hu: 'Piacok megjelenítése {{ pageFrom }} - {{ pageTo }} of {{ total}}'
+        SLOGAN:
+            en: 'The fast, secure and anonymous cryptocurrency exchange'
+            hu: 'A gyors, biztonságos és névtelen cryptocurrency váltás'
+        BOTTOMSLOGAN:
+            Header:
+                en: 'Easily Trade Without Revealing Your Identity'
+                hu: 'Könnyű Kereskedés a Kiléte Felfedése Nélkül'
+            Body:
+                en: 'The fast, efficient and secure cryptocurrency exchange.'
+                hu: 'A gyors, hatékony és biztonságos cryptocurrency váltás'
+        BUTTON:
+            CallToAction:
+                en: 'Trade Anonymously'
+                hu: 'Kereskedjen Névtelenül'
+            CallToAction2:
+                en: 'Start Now'
+                hu: 'Kezdje Most'
+        ADVANTAGE1:
+            Title:
+                en: 'Secure'
+                hu: 'Biztonság'
+            Body:
+                en: Excellent security practices keep you safe. And you never need to store your assets with the system over the long haul.
+                hu: Excellent security practices keep you safe. And you never need to store your assets with the system over the long haul.
+        ADVANTAGE2:
+            Title:
+                en: 'Low Fees'
+                hu: 'Alacsony Díjak'
+            Body:
+                en: 'At just 0.15% per trade for both BUY and SELL orders, we have some of the lowest trading fees in the industry.'
+                hu: 'Az ELADÁSOK és VÉTELEK után nálunk van a legalacsonyabb kerekedelmi díj az iparágban, amely csak 0,15%.'
+        ADVANTAGE3:
+            Title:
+                en: 'Real-Time Trading'
+                hu: 'Valós Idejű Kereskedés'
+            Body:
+                en: 'Our beautiful interface allows you to trade in real-time with live updating prices so you never miss the action.'
+                hu: 'A gyönyörű felületünkön lehetősége van kereskedni valós időben frissülő árakkal, így soha nem marad le semmiről.'
+    LOGIN:
+        ACCOUNT:
+            en: 'User Login'
+            hu: 'Felhasználó Belépés'
+    MARKET:
+        DAY:
+            HIGH:
+                en: '24 Hr High'
+                hu: '24 Óra Magas'
+            LOW:
+                en: '24 Hr Low'
+                hu: '24 Óra Alacsony'
+            VOLUME:
+                en: '24 Hr Volume'
+                hu: '24 Óra Mennyiség'
+        HEADER:
+            ActiveOrders:
+                en: 'Your Active Orders'
+                hu: 'Aktív megrendelései'
+            BuyOrders:
+                en: 'Pending Buy Orders'
+                hu: 'Függő Megrendelések'
+            OrderDepth:
+                en: 'Order Depth'
+                hu: 'Order Depth'
+            PriceAndVolume:
+                en: Price/Volume
+                hu: Ár/Mennyiség
+            RecentTrades:
+                en: 'Your Recently Completed Trades'
+                hu: 'Nemrég Teljesített Kereskedései'
+            SellOrders:
+                en: 'Pending Sell Orders'
+                hu: 'Függő Eladások'
+        HINT:
+            SIMULATED:
+                en: Simulated
+                hu: Szimulált
+            BETA:
+                en: Beta
+                hu: Beta
+            CHANGE:
+                en: change
+                hu: váltás
+            UP:
+                en: up
+                hu: fel
+            DOWN:
+                en: down
+                hu: le
+        NOTICE:
+            NoCompletedTrades:
+                en: 'There are no completed trades.'
+                hu: 'Nincsenek befejezett kereskedések.'
+            'NO':
+                GRAPH:
+                    YET:
+                        en: 'Graph will show when there is a completed trade'
+                        hu: 'A grafikon mutatja ha van befejezett kereskedés'
+            NoOpenOrders:
+                en: 'There are no open orders.'
+                hu: 'Nincs nyitott megrendelés.'
+    MARKETHISTORY:
+        TABLELINE:
+            Price:
+              en: '{{translation.GENERAL_PRICE}}({{baseCurrency}})'
+              hu: '{{translation.GENERAL_PRICE}}({{baseCurrency}})'
+        HEADER:
+            RecentHistory:
+              en: 'Recent Market History'
+              hu: 'Friss Piac Történet'
+    ORDER:
+        PRICE:
+            PER:
+                CURRENCY:
+                    en: 'Price Per'
+                    hu: 'Ár Per'
+        FIELD:
+            MarketOrder:
+                en: 'Market Order'
+                hu: 'Piaci Megrendelés'
+            CompoundTrade:
+                en: 'Compound Trade'
+                hu: 'Összetett Kereskedés'
+        LABEL:
+            FromCurrencyReturnAddress:
+                en: '{{ fromCurrency }} Return Address'
+                hu: '{{ fromCurrency }} Visszaszállítási cím'
+            ToCurrencyReturnAddress:
+                en: '{{ toCurrency }} Return Address'
+                hu: '{{ toCurrency }} Visszaszállítási cím'
+        BUTTON:
+            SubmitBuyOrder:
+                en: 'Submit Buy Order'
+                hu: 'Vásárlás Jóváhagyása'
+            SubmitSellOrder:
+                en: 'Submit Sell Order'
+                hu: 'Eladás Jóváhagyása'
+    VOLUMEBLOCK:
+        HEADER:
+            TITLE:
+                en: '24 Hour Statistics'
+                hu: '24 Órás Statisztika'
+        TABLELINE:
+            COINDATA:
+                en: '{{coin.Code }} Volume'
+                hu: '{{coin.Code }} Mennyiség'
+        TABLEFOOTER:
+            NumberOfTrades:
+                en: 'Number of Trades'
+                hu: 'Kereskedések Száma'
+    PRICEBLOCK:
+        NOTICE:
+            NoMarketsFound:
+                en: 'No markets found.'
+                hu: 'Nem található piac.'
+    PRICE:
+        BLOCK:
+            TITLE:
+                CHANGE:
+                    en: CHANGE
+                    hu: VÁLTÁS
+                COIN:
+                    en: COIN
+                    hu: ÉRME
+            VOLUME:
+                HINT:
+                    en: '24H Vol'
+                    hu: '24H Menny.'
+    SECURITY:
+        BODY:
+            en: '(!file+markdown) security_en.md'
+            hu: '(!file+markdown) security_hu.md'
+    SIDEBAR:
+        TITLE:
+            BTC:
+                MARKETS:
+                    en: '{{ baseCurrency }}  Markets'
+                    hu: '{{ baseCurrency }}  Piacok'
+        IRC:
+            Label:
+                en: 'IRC:'
+                hu: 'IRC:'
+    NAVIGATION:
+        LABEL:
+            Home:
+                en: Home
+                hu: Kezdés
+            Trading:
+                en: Trading
+                hu: Kereskedés
+            Fees:
+                en: Fees
+                hu: Díjak
+            About:
+                en: About
+                hu: About
+            Security:
+                en: Security
+                hu: Biztonság
+            API:
+                en: API
+                hu: API
+            Terms:
+                en: Terms
+                hu: Feltételek
+            Support:
+                en: Support
+                hu: Támogatás
+            PrivacyPolicy:
+                en: 'Privacy Policy'
+                hu: 'Adatvédelem'
+            TermsOfService:
+                en: 'Terms of Service'
+                hu: 'Szolgáltatás feltételei'
+        CONTROL:
+            ToggleNavigation:
+                en: 'Toggle navigation'
+                hu: 'Irányítás váltás'
+    FOOTER:
+        TEXT:
+            BrandDescription:
+                en: 'Real-Time Secure Anonymous Professional Cryptocurrency Trading Platform'
+                hu: 'Valós Idejű Biztonságos Névtelen Professzionális Cryptocurrency Kereskedelmi Felület'
+            Copyright:
+                en: '(!markdown) Copyright &copy; 2016 **BitPeer Limited**. All Rights Reserved.'
+                hu: '(!markdown) Copyright &copy; 2016 **BitPeer Limited**. All Rights Reserved.'
+            Address:
+                en: '(!file) address_en.md'
+                hu: '(!file) address_hu.md'
+        LABEL:
+            Address:
+                en: Address
+                hu: Cím
+            ContactUs:
+                en: 'Contact Us'
+                hu: 'Lépjen Kapcsolatba Velünk'
+        EMAILADDRESS:
+            Support:
+                en: support@bitpeer.com
+                hu: support@bitpeer.com
+    ACCESSIBILITY:
+        HINT:
+            BrandLogo:
+                en: 'Bitpeer Logo'
+                hu: 'Bitpeer Logo'
+            Twitter:
+                en: Twitter
+                hu: Twitter
+            Facebook:
+                en: Facebook
+                hu: Facebook
+            Skype:
+                en: Skype
+                hu: Skype
+            Toggle:
+                en: Toggle
+                hu: Toggle
+    TERMS:
+        Privacy:
+            en: '(!file+markdown) privacy_en.md'
+            hu: '(!file+markdown) privacy_hu.md'
+        TOS:
+            en: '(!file+markdown) terms_en.md'
+            hu: '(!file+markdown) terms_hu.md'

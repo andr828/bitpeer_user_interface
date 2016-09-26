@@ -1,0 +1,90 @@
+BitPeer Privacy Policy
+======================
+
+The protection of your personal data is of utmost importance to
+
+**Bitpeer LTD**<br/>
+20-22 Wenlock Road<br/>
+London<br/>
+N1 7GU<br/>
+United Kingdom<br/>
+
+
+
+Email: [support@bitpeer.com](mailto:support@bitpeer.com)
+
+Company registered in England (Registration number: 10158985)
+
+
+
+(hereinafter referred to as "BITPEER"). This Privacy Policy sets forth which personal data of yours may be collected through this web presentation or any mobile presentations and in which way BITPEER is allowed to use or, if required, transfer such data.
+
+BITPEER will process personal data in compliance with the Data Protection Regulations of the European Union, the German Data Protection Act and the Telemedia Act.
+
+BITPEER shall be responsible within the meaning of the German Data Protection Act.
+
+
+
+**Revision Date:** August 2016
+
+
+
+### **1.** Summary
+
+Our business is built on trust between our customers and ourselves. To preserve the confidentiality of all information you provide to us, we maintain the following privacy principles:
+- We will only collect personal information that we believe to be relevant and required to conduct our business.
+- We will use your personal data for our internal business purposes, e.g. data analyses, development of new products, improvement of our website and of our services, analysis of user trends and the efficiency of our promotion campaigns.
+- We will not disclose your personal information to any external organization unless we have your consent or are required by law or have previously informed you.
+- This privacy policy may change from time to time.
+
+
+
+### **2.** Data Security
+
+BITPEER uses technical and organizational security measures in order to protect your data administrated by us against accidental or intentional manipulation, loss, destruction or access by unauthorized persons. Our security measures are regularly improved in accordance with the state of technological developments. The processing and transfer of data are made by the SSL (Secure Socket Layer) procedure - an industry standard for encryption over the Internet to protect data.
+
+Security is our top priority. We will strive at all times to ensure that your personal data will be protected against unauthorized or accidental access, processing or erasure. We maintain this commitment to data security by implementing appropriate physical, electronic and managerial measures to safeguard and secure your personal data.
+
+Our web servers are protected behind firewalls and our systems are monitored to prevent any unauthorized access. All practical steps has been taken to ensure that personal data is not kept longer than necessary.
+
+
+
+### **3.** Cookies
+
+Your visit to this site may be recorded for analysis on the number of visitors to the site and general usage patterns. Some of this information will be gathered through the use of "cookies". A "cookie" is a file that is saved on your hard drive and contains information about you.  BITPEER may place cookies on your hard drive in order to help you navigate through our website and make the BITPEER website an individual experience for you. If you wish to remove these cookies, most of the Internet browsers will allow you to delete cookies from the hard drive of your computer in order to prevent cookies from being saved or an alarm message from popping up before a cookie is saved.
+
+### **4.** Web Analytics
+
+Google Analytics, a web analysis service of Google Inc. ("Google") is used on this website. Google Analytics uses so-called "Cookies" allowing an analysis of your use of the website. The information about your use of the website created by a Cookie (including your anonymized IP address) is then transferred to a server of Google Inc. in the USA and stored there. Google will use this information to evaluate your use of the website, compile reports on website activities for the website operator and provide further data relating to website and Internet use. Google will transfer this information to third parties if prescribed by law or to the extent those third parties are commissioned by Google Inc. to process the data. Google will in no case link your IP address with other data of Google Inc. You may block the installation of Cookies by certain settings provided by your browser software; we would like to inform you however that in this case you may not be able to have full access to all website functions. Furthermore, you can prevent the compilation of data (including your IP address) through cookies and website use by downloading and installing the browser plug-in available through the following link: [http://tools.google.com/dlpage/gaoptout?hl=de](http://tools.google.com/dlpage/gaoptout?hl=de)
+
+By using this website, you agree to the processing of the data gathered about you by Google in the way described above and for the aforementioned purposes. Further Information about Google Analytics and data protection is available through the following link [http://www.google.com/intl/de/analytics/privacyoverview.html](http://www.google.com/intl/de/analytics/privacyoverview.html)
+
+
+### **5.** Notice to Customers Relating to Personal Data
+
+This Privacy Policy is made by BITPEER and is intended to notify you why personal data is collected, how it will be used and to whom data access requests are to be addressed.
+
+1. Your personal data may be transferred to another group company affiliated with BITPEER if this is necessary for the implementation of the object of the respective contract and/or for the execution of your orders or for the provision of a service. You may contact BITPEER at any time regarding your right of information or any other rights.
+
+2. From time to time, it maybe necessary for customers to supply us with data in connection with a particular trade for any suspicious transaction or in compliance with any laws or guidelines issued by regulatory or other authorities.
+
+3. Failure to supply such data may result in BITPEER being unable to permit trading or withdrawal of funds.
+
+4. The purposes for which data relating to a customer may be used are as follows:<br/>
+
+
+  1. the daily operation of the services and facilities provided to customers;
+  2.  meeting the requirements to make disclosure under the requirements of any law binding on BITPEER under and for the purposes of any guidelines issued by regulatory or other authorities.
+  3. Data held by BITPEER relating to a customer will be kept confidential but BITPEER may provide such information to the following parties for the purposes set out in paragraph above:
+  - any agent, contractor or third party service provider who provides administrative, telecommunications, computer, payment or securities clearing or other services to BITPEER in connection with the operation of its business;
+  - any other person under a duty of confidentiality to BITPEER including a group company of BITPEER which has undertaken to keep such information confidential;
+  - any person to whom BITPEER is under an obligation to make disclosure under the requirements of any law binding on BITPEER or under and for the purposes of any guidelines issued by regulatory or other authorities with which BITPEER is expected to comply.
+
+### **6.** External Websites
+
+Our website may contain links to websites operated by other companies. If you use such links, you will leave the website of BITPEER. BITPEER is not responsible for such third-party websites. The BITPEER Privacy Policy does not apply to websites of third parties. Please check directly on such websites how such protected personal data are used.
+
+
+### **7.** Contact
+
+By accessing this web site and any of its pages you are agreeing to the terms set out above. If you have any questions regarding this Privacy Policy or the scope of personal data, please contact us under the following email address: support@bitpeer.com.

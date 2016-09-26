@@ -1,0 +1,31 @@
+<div class="panel panel-history" ng-if="marketData">
+    <div class="panel-heading">{{ translation.MARKET_HEADER_RecentTrades }} </div>
+    <div class="panel-body">
+        <table class="table" id="historyTable">
+            <tr class="uppercase-text">
+                <th>{{ translation.GENERAL_HEADER_TIME }}</th>
+                <th>{{ translation.GENERAL_HEADER_TYPE }}</th>
+                <th>{{translation.GENERAL_PRICE}}</th>
+                <th>{{selectedCurrency}}</th>
+                <th>{{translation.GENERAL_TOTAL}}</th>
+                <th>{{translation.GENERAL_FEE}}</th>
+                <th>{{translation.GENERAL_NET_TOTAL}}</th>
+            </tr>
+            <tbody>
+            <tr  class="uppercase-text" ng-repeat="userTrade in marketData">
+                <td>{{userTrade.time_formatted}}</td>
+                <td><span ng-attr-class="{{userTrade.type | lowercase}}">{{userTrade.type}}</span></td>
+                <td>{{userTrade.price}}</td>
+                <td>{{userTrade.amount}}</td>
+                <td>{{userTrade.total}}</td>
+                <td>{{userTrade.fee}}</td>
+                <td>{{userTrade.net_total}}</td>
+            </tr>
+            <tr ng-if="!marketData[0]">
+                <td class="none" colspan="7">{{ translation.MARKET_NOTICE_NoCompletedTrades }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>

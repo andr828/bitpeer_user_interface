@@ -1,0 +1,17 @@
+<div ng-if="coinDescriptionArray.length == 0">
+    <ul>
+        <li class="noresults" id="btcNoResults">{{ translation.PRICEBLOCK_NOTICE_NoMarketsFound }}</li>
+    </ul>
+</div>
+<div ng-if="coinDescriptionArray.length > 0">
+    <form class="currency_form">
+        <div class="form-group">
+            <label for="">Select a Coin:</label>
+            <select class="form-control" ng-model="item" ng-change="setSelectedCurrencyFunction(item)">
+                <option ng-repeat="coin in coinDescriptionArray" ng-if="coin.Code != baseCurrency" ng-selected="coin.Code == selectedCurrency" value="{{coin.Code}}">
+                {{ coin.Code }}
+                </option>
+            </select>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,29 @@
+<div ng-init="priceBlockShowing = true" ng-cloak ng-init="selected_currency=''" class="price-block">
+
+
+    <h2><a ng-click="priceBlockShowing = !priceBlockShowing">{{getRealValue(translation.SIDEBAR_TITLE_BTC_MARKETS) }}
+        <img ng-if="!priceBlockShowing" src="/assets/images/icons/toggledown.png" class="toggle-caret" alt="{{ translation.ACCESSIBIITY_HINT_Toggle }}"/>
+        <img ng-if="priceBlockShowing" src="/assets/images/icons/toggleup.png" class="toggle-caret" alt="{{ translation.ACCESSIBIITY_HINT_Toggle }}"/></a></h2>
+    <div ng-show="priceBlockShowing">
+        <ul ng-class="(coinDescriptionArray.length > 0 ? 'AutoScroll':'')" class="market" id="btcMarkets">
+            <li class="title">
+                <span class="name">{{translation.PRICE_BLOCK_TITLE_COIN}}</span>
+                <span class="price">{{translation.GENERAL_PRICE | uppercase}}</span>
+                <span class="change">{{translation.PRICE_BLOCK_TITLE_CHANGE}}</span>
+            </li>
+
+            <ng-repeat ng-repeat="coin in coinDescriptionArray" ng-attr-class="active">
+            <li ng-click="selected_currency = coin.Code; setSelectedCurrencyFunction(selected_currency)" ng-if="coin.Code != baseCurrency">
+                <price-block-line coin="coin" translation="translation"></price-block-line>
+            </li>
+            </ng-repeat>
+
+        </ul>
+        <div ng-if="coinDescriptionArray.length == 0">
+            <ul>
+                <li class="noresults" id="btcNoResults">{{ translation.PRICEBLOCK_NOTICE_NoMarketsFound }}</li>
+            </ul>
+        </div>
+    </div>
+
+</div>

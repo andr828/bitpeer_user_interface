@@ -1,0 +1,116 @@
+<div class="row">
+
+    <div class="col-xs-12 visible-xs">
+        <coin-selector coin-description-array="coinDescriptionArray" translation="translation"
+                       base-currency="{{ baseCurrency }}" selected-currency="{{ selectedCurrency }}"
+                       class="sidebar"></coin-selector>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="col-sm-4 col-lg-3">
+        <sidebar coin-description-array="coinDescriptionArray" translation="translation" product-name="{{ prodName }}"
+                 number-of-trades="numberOfTrades" base-currency="{{ baseCurrency }}"
+                 set-current-coin-function="setSelectedCurrencyFunction(coin)" class="sidebar"></sidebar>
+
+    </div>
+
+    <div class="col-sm-8 col-lg-9">
+
+        <div class="row" id="market-data-header">
+
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <currency-pair-callout base-currency="{{ baseCurrency }}"
+                                               base-currency-name="{{ baseCurrencyName }}"
+                                               selected-currency="{{ selectedCurrency }}"
+                                               selected-currency-name="{{ selectedCurrencyName }}"
+                                               translation="translation"></currency-pair-callout>
+                        <fast-currency-statistics
+                                last-selected-currency-price="{{ selectedCurrencyDailyStats.latest_price }}"
+                                selected-currency-day-high-price="{{ selectedCurrencyDailyStats.statistics_day_high }}"
+                                selected-currency-day-low-price="{{ selectedCurrencyDailyStats.statistics_day_low }}"
+                                selected-currency-day-volume="{{ selectedCurrencyDailyStats.statistics_day_volume }}"
+                                base-currency="{{ baseCurrency }}" translation="translation"></fast-currency-statistics>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- ng-include src="'directives/market-charts.html'"></--ng-include -->
+        <!-- ng-include src="'directives/trade-confirmations.html'"></ng-include -->
+        <!-- ng-include src="'directives/active-orders.html'"></ng-include -->
+
+        <div class="row">
+
+            <div class="col-lg-6">
+                <div class="panel panel-sided-orders">
+                    <div class="panel-heading panel-heading-orders-buy">{{translation.GENERAL_BUY }} {{
+                        selectedCurrency}}
+                    </div>
+                    <div class="panel-body">
+                        <order-form order-type="buy" from-currency="selectedCurrency" to-currency="baseCurrency"
+                                    coin-description-array="coinDescriptionArray"
+                                    enable-advanced-trades="enableAdvancedTrades"
+                                    submit-order-function="submitOrder(data)"
+                                    translation="translation">
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- fix for alignment issue -->
+            <div class="col-lg-6">
+                <div class="panel panel-sided-orders">
+                    <div class="panel-heading panel-heading-orders-sell">{{translation.GENERAL_SELL }} {{
+                        selectedCurrency }}
+                    </div>
+                    <div class="panel-body">
+
+                        <order-form order-type="sell" from-currency="selectedCurrency" to-currency="baseCurrency"
+                                    coin-description-array="coinDescriptionArray"
+                                    enable-advanced-trades="enableAdvancedTrades"
+                                    submit-order-function="submitOrder(data)"
+                                    translation="translation">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <sided-orders is-sell-table="false" market-data="userBuyOrders" base-currency="{{ baseCurrency }}"
+                          selected-currency="{{ selectedCurrency }}" translation="translation"
+                          class="col-lg-6"></sided-orders>
+
+            <sided-orders is-sell-table="true" market-data="userSellOrders" base-currency="{{ baseCurrency }}"
+                          selected-currency="{{ selectedCurrency }}" translation="translation"
+                          class="col-lg-6"></sided-orders>
+
+        </div>
+
+        <div class="row">
+            <market-history market-data="marketHistory" base-currency="{{ baseCurrency }}"
+                            selected-currency="{{ selectedCurrency }}" translation="translation"
+                            class="col-lg-12"></market-history>
+        </div>
+
+        <div class="row">
+
+            <user-trades market-data="userCompletedTrades"
+                         selected-currency="{{ selectedCurrency }}" translation="translation"
+                         class="col-lg-12"></user-trades>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>

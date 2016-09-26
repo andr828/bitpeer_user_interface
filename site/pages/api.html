@@ -1,0 +1,472 @@
+
+
+            <h1>{{prodName | lowercase}} API v2</h1>
+
+
+            <h2>Overview</h2>
+
+            {{prodName | lowercase}} API v2 offers a simple and more standardized REST API to make full use of our site
+            functionality. The standard API responses are JSON encoded arrays and we support GET, POST and DELETE
+            requests. Please be aware that calls to the API are rate limited to 10 requests per second, any requests
+            exceeding this rate will be met with a HTTP 503 response.
+
+
+            <h2>API Reference</h2>
+
+            <strong>Market</strong>
+
+            <ol class="reference">
+                <li><a href="#marketsummary">Market Summary</a></li>
+                <li><a href="#marketstats">Market Stats</a></li>
+                <li><a href="#markettrades">Market Trades</a></li>
+                <li><a href="#marketorders">Market Orders</a></li>
+                <li><a href="#marketchartdata">Market Chart Data</a></li>
+            </ol>
+
+            <strong>Trading</strong>
+
+            <ol class="reference">
+                <li><a href="#tradingorders">Trading Orders</a></li>
+                <li><a href="#tradingorder">Trading Single Order</a></li>
+                <li><a href="#tradingaddorder">Trading Add Order</a></li>
+                <li><a href="#tradingcancelorder">Trading Cancel Order</a></li>
+                <li><a href="#tradingtrades">Trading Trades</a></li>
+                <li><a href="#tradingtrade">Trading Single Trade</a></li>
+            </ol>
+
+            <strong>Sample Code</strong>
+
+            <ol class="reference">
+                <li><a href="#phpsample">PHP</a></li>
+            </ol>
+
+
+            <h2>Authentication</h2>
+
+            All requests to the Wallet and Trading methods require authentication via a public and private API key pair.
+            An authenticated API request must contain the following three items.
+
+            <br/><br/>
+
+            <table class="apiparameters" cellspacing="0">
+                <thead>
+                <tr>
+                    <th width="130">Parameter</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>key</td>
+                    <td>Your public API Key.</td>
+                </tr>
+                <tr>
+                    <td>time</td>
+                    <td>Current unix timestamp (your requesting device MUST keep accurate time).</td>
+                </tr>
+                <tr>
+                    <td>hash</td>
+                    <td>HMAC-SHA-256 hash of the full URL and request data, including the public key and timestamp.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <br/>
+            <strong>IMPORTANT:</strong> The unix timestamp included in the API calls must be accurate to within 5
+            seconds, any requests received with a timestamp outside of this window will be rejected to aid in the
+            prevention of replay attacks. You can call the following method https://api.{{prodName |
+            lowercase}}.com/timestamp to get our current server time.
+
+            <h3><a id="marketsummary"></a>Authenticated Example</h3>
+
+            <pre class="api"><div class="apirequest apiget">GET</div> https://api.{{prodName | lowercase}}.com/v2/wallet/balances/?key=1239[...]55ac8&time=1396560131&hash=b5c45e[...]f5375c</pre>
+
+            The hash value is a HMAC-SHA-256 hash of the full url e.g. https://api.{{prodName |
+            lowercase}}.com/v2/wallet/balances/?key=1239[...]55ac8&time=1396560131. The same method applies for POST
+            requests.
+
+            <h4>Response</h4>
+
+            <pre class="api">{<br/>   "status":"success",<br/>   "count":42,<br/>   "data":[{<br/>      "id":26,<br/>     "code":"AUR",<br/>      "name":"AuroraCoin",<br/>       "balance_available":"2.00000000",<br/>      "balance_pending_deposit":"0.00000000",<br/>      "balance_pending_withdraw":"0.00000000",<br/>      "balance_held":"6.50000000"<br/>   },<br/>   ...<br/>   ]<br/>}</pre>
+
+
+            <h2>API Response</h2>
+
+            The response from the API is standard with a <strong>status</strong> field that shows if the request was
+            successful or not. Based on this, there will be a <strong>data</strong> field that holds the data as an
+            array if successful, a <strong>count</strong> field if fetching more than one item and/or a
+            <strong>message</strong> field that holds the success/error message.
+
+            <br/><br/>
+
+            Example successful response:
+
+            <pre class="api">{<br/>   "status":"success",<br/>   "count":42,<br/>   "data":[{...}]<br/>}</pre>
+
+            Example error response:
+
+            <pre class="api">{<br/>   "status":"error",<br/>   "message":"The coin code does not exist."<br/>}</pre>
+
+            <h2>Market Methods</h2>
+
+            All markets methods are public and do not require authentication.
+
+            <h3><a id="marketsummary"></a>Market Summary</h3>
+
+            <pre class="api"><div class="apirequest apiget">GET</div> https://api.{{prodName | lowercase}}.com/v2/market/summary/</pre>
+
+            Provides an overview of all our markets. Data refreshes every minute.
+
+            <pre class="api"><div class="apirequest apiget">GET</div> https://api.{{prodName | lowercase}}.com/v2/market/summary/{EXCHANGE}</pre>
+
+            Provides an overview of only BTC or LTC markets. Data refreshes every minute.<br/>Example:
+            https://api.{{prodName | lowercase}}.com/v2/market/summary/BTC
+
+            <h4>Response</h4>
+
+            <pre class="api">{<br/>   "status":"success",<br/>   "count":42,<br/>   "data":[{<br/>      "market_id":"25",<br/>      "code":"AUR",<br/>      "exchange":"BTC",<br/>      "last_price":"0.04600001",<br/>      "yesterday_price":"0.04300000",<br/>      "change":"+6.98",<br/>      "24hhigh":"0.04980000",<br/>      "24hlow":"0.04000050",<br/>      "24hvol":"21.737"<br/>      "top_bid":"0.04590000"<br/>      "top_ask":"0.04600005"<br/>   },<br/>   ...<br/>   ]<br/>}</pre>
+
+            <em>NOTE: Yesterday price refers to what the price was midnight UTC.</em>
+
+            <h3><a id="marketstats"></a>Market Stats</h3>
+
+            <pre class="api"><div class="apirequest apiget">GET</div> https://api.{{prodName | lowercase}}.com/v2/market/stats/{COIN}/{EXCHANGE}</pre>
+
+            Provides the statistics for a single market. Data refreshes every minute.<br/>Example:
+            https://api.{{prodName | lowercase}}.com/v2/market/stats/AUR/BTC
+
+            <h4>Response</h4>
+
+            <pre class="api">{<br/>   "status":"success",<br/>   "data":{<br/>      "market_id":"25",<br/>      "code":"AUR",<br/>      "exchange":"BTC",<br/>      "last_price":"0.04600001",<br/>      "yesterday_price":"0.04300000",<br/>      "change":"+6.98",<br/>      "24hhigh":"0.04980000",<br/>      "24hlow":"0.04000050",<br/>      "24hvol":"21.737"<br/>      "top_bid":"0.04590000"<br/>      "top_ask":"0.04600005"<br/>   }<br/>}</pre>
+
+            <em>NOTE: Yesterday price refers to what the price was midnight UTC.</em>
+
+            <h3><a id="markettrades"></a>Market Trades</h3>
+
+            <pre class="api"><div class="apirequest apiget">GET</div> https://api.{{prodName | lowercase}}.com/v2/market/trades/{COIN}/{EXCHANGE}</pre>
+
+            Fetches the last 100 trades for a given market.<br/>Example: https://api.{{prodName |
+            lowercase}}.com/v2/market/trades/MINT/BTC
+
+            <pre class="api"><div class="apirequest apiget">GET</div> https://api.{{prodName | lowercase}}.com/v2/market/trades/{COIN}/{EXCHANGE}/{LIMIT}</pre>
+
+            Fetches the specified number of trades for a given market, maximum limit is 200.<br/>Example:
+            https://api.{{prodName | lowercase}}.com/v2/market/trades/MINT/BTC/150
+
+            <h4>Response</h4>
+
+            <pre class="api">{<br/>   "status":"success",<br/>   "count":100,<br/>   "data":[{<br/>      "type":"SELL",<br/>      "price":"0.00000023",<br/>      "amount":"412128.80177019",<br/>      "total":"0.09478962",<br/>      "time":"1394498289.2727"<br/>   },<br/>   ...<br/>   ]<br/>}</pre>
+
+            <em>NOTE: Time is specified as a unix timestamp with microseconds.</em>
+
+
+            <h3><a id="marketorders"></a>Market Orders</h3>
+
+            <h4>Single Type</h4>
+
+            <pre class="api"><div class="apirequest apiget">GET</div> https://api.{{prodName | lowercase}}.com/v2/market/orders/{COIN}/{EXCHANGE}/{TYPE}</pre>
+
+            Fetches the 50 best priced orders of a given type for a given market, where {TYPE} can be either BUY or
+            SELL.<br/>Example: https://api.{{prodName | lowercase}}.com/v2/market/orders/MINT/BTC/BUY
+
+            <pre class="api"><div class="apirequest apiget">GET</div> https://api.{{prodName | lowercase}}.com/v2/market/orders/{COIN}/{EXCHANGE}/{TYPE}/{LIMIT}</pre>
+
+            Fetches the specified number of best priced orders of a given type for a given market, where {TYPE} can be
+            either BUY or SELL, maximum limit is 200.<br/>Example: https://api.{{prodName |
+            lowercase}}.com/v2/market/orders/MINT/BTC/BUY/150
+
+            <h4>Response</h4>
+
+            <pre class="api">{<br/>   "status":"success",<br/>   "count":23,<br/>   "data":[{<br/>      "price":"0.00000023",<br/>      "amount":"22446985.14519785",<br/>      "total":"5.16280655"<br/>   },<br/>   ...<br/>   ]<br/>}</pre>
+
+            <h4>Combined</h4>
+
+            <pre class="api"><div class="apirequest apiget">GET</div> https://api.{{prodName | lowercase}}.com/v2/market/orders/{COIN}/{EXCHANGE}/ALL</pre>
+
+            Fetches the 50 best priced buy and sell orders together for a given market.<br/>Example:
+            https://api.{{prodName | lowercase}}.com/v2/market/orders/MINT/BTC/ALL
+
+            <pre class="api"><div class="apirequest apiget">GET</div> https://api.{{prodName | lowercase}}.com/v2/market/orders/{COIN}/{EXCHANGE}/ALL/{LIMIT}</pre>
+
+            Fetches the specified number of best priced buy and sell orders together for a given market, maximum limit
+            is 200 for each type.<br/>Example: https://api.{{prodName |
+            lowercase}}.com/v2/market/orders/MINT/BTC/ALL/150
+
+            <h4>Response</h4>
+
+            <pre class="api">{<br/>   "status":"success",<br/>   "data":[{<br/>      "type":"buy",<br/>      "count":23,<br/>      "orders":[{<br/>         "price":"0.00000023",<br/>         "amount":"22446985.14519785",<br/>         "total":"5.16280655"<br/>      },<br/>      ...<br/>      ]},{<br/>      "type":"sell",<br/>      "count":150,<br/>      "orders":[{<br/>         "price":"0.00000024",<br/>         "amount":"1000000.00000000",<br/>         "total":"0.24000000"<br/>      },<br/>      ...<br/>      ]}<br/>   }]<br/>}</pre>
+
+
+            <h3><a id="marketchartdata"></a>Market Chart Data</h3>
+
+            <pre class="api"><div class="apirequest apiget">GET</div> https://api.{{prodName | lowercase}}.com/v2/market/chartdata/{COIN}/{EXCHANGE}/{PERIOD}</pre>
+
+            Fetches the chart data that we use for our candlestick graphs for a market for a given time period. The
+            period is an optional parameter and can be either '6hh' (6 hours), '1DD' (24 hours), '3DD' (3 days), '7DD'
+            (1 week) or 'MAX'. If no period is defined, it will default to 6 hours.<br/>Example: https://api.{{prodName
+            | lowercase}}.com/v2/market/chartdata/MINT/BTC/1DD
+
+            <h4>Response</h4>
+
+            <pre class="api">{<br/>   "status":"success",<br/>   "count":144,<br/>   "data":[{<br/>      "date":"2014-02-09 14:20",<br/>      "open":"0.00000006",<br/>      "close":"0.00000006",<br/>      "high":"0.00000006",<br/>      "low":"0.00000003",<br/>      "exchange_volume":"0.00002145",<br/>      "coin_volume":"608.50000000"<br/>   },<br/>   ...<br/>   ]<br/>}</pre>
+
+            <h2>Trading Methods</h2>
+
+            All trading methods require authentication.
+
+            <h3><a id="tradingorders"></a>Trading Orders</h3>
+
+            <pre class="api"><div class="apirequest apiget">GET</div> https://api.{{prodName | lowercase}}.com/v2/trading/orders/</pre>
+
+            Fetches the current open orders in your account, ordered by most recent first and limited to 25 results.
+
+            <pre class="api"><div class="apirequest apiget">GET</div> https://api.{{prodName | lowercase}}.com/v2/trading/orders/{COIN}</pre>
+
+            Fetches the current open orders for a specific coin, including both BTC and LTC markets where applicable, in
+            your account, ordered by most recent first and limited to 25 results.<br/>
+            Example: https://api.{{prodName | lowercase}}.com/v2/trading/orders/BTC
+
+            <pre class="api"><div class="apirequest apiget">GET</div> https://api.{{prodName | lowercase}}.com/v2/trading/orders/{COIN}/{START}/{LIMIT}</pre>
+            By default, the method will fetch 25 results. Use the start and limit parameters to fetch more results. Use
+            ALL for the coin if you want to fetch more results for all coins/markets. The maximum limit is 200
+            entries.<br/>
+            Example: https://api.{{prodName | lowercase}}.com/v2/trading/orders/ALL/25/50 fetches the 26th to 75th
+            items.
+
+            <h4>Response</h4>
+
+            <pre class="api">{<br/>   "status":"success",<br/>   "count":25,<br/>   "data":[{<br/>      "order_id":"YFHG-12345678",<br/>      "market":"MINT\/BTC",<br/>      "type":"BUY",<br/>      "price":"0.00000015",<br/>      "amount":"500.00000000",<br/>      "total":"0.00007500",<br/>      "fee":"0.00000011",<br/>      "net_total":"0.00007511",<br/>      "time":"1393776944.1234",<br/>     "time_formatted":"2014-03-20 19:50:39"<br/>   },<br/>   ...<br/>   ]<br/>}</pre>
+
+
+            <h3><a id="tradingorder"></a>Trading Single Order</h3>
+
+            <pre class="api"><div class="apirequest apiget">GET</div> https://api.{{prodName | lowercase}}.com/v2/trading/order/{ID}</pre>
+
+            Fetches the order identified by the order ID.
+
+            <h4>Response</h4>
+
+            <pre class="api">{<br/>   "status":"success",<br/>   "data":{<br/>      "order_id":"YFHG-12345678",<br/>      "market":"MINT\/BTC",<br/>      "type":"BUY",<br/>      "price":"0.00000015",<br/>      "amount":"500.00000000",<br/>      "total":"0.00007500",<br/>      "fee":"0.00000011",<br/>      "net_total":"0.00007511",<br/>      "time":"1393776944.1234",<br/>      "time_formatted":"2014-03-20 19:50:39"<br/>   }<br/>}</pre>
+
+
+            <h3><a id="tradingaddorder"></a>Trading Add Order</h3>
+
+            <pre class="api"><div class="apirequest apipost">POST</div> https://api.{{prodName | lowercase}}.com/v2/trading/order/</pre>
+
+            Submits a new order to market.
+
+            <h4>Parameters</h4>
+
+            <table class="apiparameters" cellspacing="0">
+                <thead>
+                <tr>
+                    <th width="130">Name</th>
+                    <th width="110">Type</th>
+                    <th width="120">Required</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>coin</td>
+                    <td>String</td>
+                    <td>Yes</td>
+                    <td>The first half of the market, e.g. if want to add order to MINT/BTC, enter MINT.</td>
+                </tr>
+                <tr>
+                    <td>exchange</td>
+                    <td>String</td>
+                    <td>Yes</td>
+                    <td>The second half of the market, e.g. if want to add order to MINT/BTC, enter BTC.</td>
+                </tr>
+                <tr>
+                    <td>price</td>
+                    <td>Decimal</td>
+                    <td>Yes</td>
+                    <td>The price of the order, up to 8 decimals.</td>
+                </tr>
+                <tr>
+                    <td>amount</td>
+                    <td>Decimal</td>
+                    <td>Yes</td>
+                    <td>The amount of coins you wish to purchase or sell, up to 8 decimals.</td>
+                </tr>
+                <tr>
+                    <td>type</td>
+                    <td>Integer</td>
+                    <td>Yes</td>
+                    <td>If the order is a BUY (0) or a SELL (1).</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h4>Response</h4>
+
+            <pre class="api">{<br/>   "status":"success",<br/>   "message":"The order has successfully gone to market.",<br/>   "data":{<br/>      "order_id":"YFHG-12345678",<br/>      "market":"MINT/BTC",<br/>      "type":"BUY",<br/>      "price":"0.00000015",<br/>      "amount":"500.00000000",<br/>      "total":"0.00007500",<br/>      "fee":"0.00000011",<br/>      "net_total":"0.00007511",<br/>      "time":"1393776944.1234",<br/>      "time_formatted":"2014-03-20 19:50:39"<br/>   }<br/>}</pre>
+
+
+            <h3><a id="tradingcancelorder"></a>Trading Cancel Order</h3>
+
+            <pre class="api"><div class="apirequest apidelete">DELETE</div> https://api.{{prodName | lowercase}}.com/v2/trading/order/{ID}</pre>
+
+            Cancels an open order identified by the order ID. Warning: order cancellations are processed FIFO (First In
+            First Out) alongside new orders, so it may be matched before the cancellation can be processed.
+
+            <h4>Response</h4>
+
+            <pre class="api">{<br/>   "status":"success",<br/>   "message":"The pending withdrawal has successfully been cancelled and the balance made available again."<br/>}</pre>
+
+
+            <h3><a id="tradingtrades"></a>Trading Trades</h3>
+
+            <pre class="api"><div class="apirequest apiget">GET</div> https://api.{{prodName | lowercase}}.com/v2/trading/trades/</pre>
+
+            Fetches the trades made in your account, ordered by most recent first and limited to 25 results.
+
+            <pre class="api"><div class="apirequest apiget">GET</div> https://api.{{prodName | lowercase}}.com/v2/trading/trades/{COIN}</pre>
+
+            Fetches the trades made in your account for a specific coin, including BTC and LTC markets where applicable,
+            ordered by most recent first and limited to 25 results.<br/>
+            Example: https://api.{{prodName | lowercase}}.com/v2/trading/trades/BTC
+
+            <pre class="api"><div class="apirequest apiget">GET</div> https://api.{{prodName | lowercase}}.com/v2/trading/trades/{COIN}/{START}/{LIMIT}</pre>
+            By default, the method will fetch 25 results. Use the start and limit parameters to fetch more results. Use
+            ALL for the coin if you want to fetch more results for all coins/markets. The maximum limit is 200
+            entries.<br/>
+            Example: https://api.{{prodName | lowercase}}.com/v2/trading/trades/ALL/25/50 fetches the 26th to 75th
+            items.
+
+            <h4>Response</h4>
+
+            <pre class="api">{<br/>   "status":"success",<br/>   "count":25,<br/>   "data":[{<br/>      "trade_id":"YFHG-12345678",<br/>      "market":"MINT\/BTC",<br/>      "type":"BUY",<br/>      "time":"1393776944.1234",<br/>     "price":"0.00000015",<br/>      "amount":"500.00000000",<br/>      "total":"0.00007500",<br/>      "fee":"0.00000011",<br/>      "net_total":"0.00007511",<br/>      "order_id":"ONYC-12345678",<br/>     "time_formatted":"2014-03-20 19:50:39"<br/>   },<br/>   ...<br/>   ]<br/>}</pre>
+
+
+            <h3><a id="tradingtrade"></a>Trading Single Trade</h3>
+
+            <pre class="api"><div class="apirequest apiget">GET</div> https://api.{{prodName | lowercase}}.com/v2/trading/trade/{ID}</pre>
+
+            Fetches the trade identified by the trade ID.
+
+            <h4>Response</h4>
+
+            <pre class="api">{<br/>   "status":"success",<br/>   "data":[{<br/>      "trade_id":"YFHG-12345678",<br/>      "market":"MINT\/BTC",<br/>      "type":"BUY",<br/>      "time":"1393776944.1234",<br/>     "price":"0.00000015",<br/>      "amount":"500.00000000",<br/>      "total":"0.00007500",<br/>      "fee":"0.00000011",<br/>      "net_total":"0.00007511",<br/>      "order_id":"ONYC-12345678",<br/>     "time_formatted":"2014-03-20 19:50:39"<br/>   }<br/>}</pre>
+
+
+            <h2>Sample Code</h2>
+
+            You are free to use and modify all of the below API sample code.
+
+            <h3><a id="phpsample"></a>PHP</h3>
+
+<pre class="api"><&#063;php
+
+// Get balances
+$response = _doAPICall('wallet/balances');
+
+// Test a withdraw
+//$response = _doAPICall('wallet/withdraw/BTC', array('address' => "123456789", 'amount' => '10'), 'POST');
+
+// Delete an order
+//$response = _doAPICall('trading/order/KMTA-12345678', array(), 'DELETE');
+
+/**
+ * Interfaces with the {{prodName | lowercase}} API via cURL. Function handles, GET, POST & DELETE
+ *
+ * @param   string  $apiCall  The API function that we want to use
+ * @param   array   $data     The data for the API function parameters
+ * @param   string  $method   If we're using GET, POST or DELETE, uses GET by default
+ * @return  array
+ */
+function _doAPICall($apiCall, $data = array(), $method = 'GET')
+{
+
+  // Setup public & private keys
+  $apiPublicKey = "123931eeb6baadd53cbdbc755ac81cfd";
+  $apiPrivateKey = "6546d5e0692d7d5dfd84c1a25ea9d7";
+
+  // Setup URL
+  $apiUrl = "https://api.bitpeerdemo.com/v2/";
+
+  // Set time to variable so it's definitely constant
+  $time = time();
+
+  // Start cURL
+  $c = curl_init();
+  curl_setopt($c, CURLOPT_CONNECTTIMEOUT, 5);
+  curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
+
+  // Check what type of API call we are making
+  if ($method == 'GET') {
+
+    // Start building the URL
+    $apiCall = $apiUrl . $apiCall . "?time=" . $time . "&key=" . $apiPublicKey;
+
+    // Add the array of data to the URL
+    if (count($data)) {
+      $apiCall .= "&".http_build_query($data);
+    }
+
+    // Hash the data
+    $hash = hash_hmac("sha256", $apiCall, $apiPrivateKey);
+
+    // Append the hash
+    $apiCall .= "&hash=" . $hash;
+
+    // Setup the remainder of the cURL request
+    curl_setopt($c, CURLOPT_URL, $apiCall);
+
+  } else if ($method == 'DELETE') {
+
+    // DELETE requests use POSTFIELDS, so add the time and hash
+    $data['time'] = $time;
+    $data['key'] = $apiPublicKey;
+
+    // Hash the data
+    $data['hash'] = hash_hmac("sha256", $apiUrl . $apiCall . "?" . http_build_query($data), $apiPrivateKey);
+
+    // Setup the remainder of the cURL request
+    curl_setopt($c, CURLOPT_URL, $apiUrl . $apiCall);
+    curl_setopt($c, CURLOPT_POSTFIELDS, http_build_query($data));
+    curl_setopt($c, CURLOPT_HTTPHEADER, array('X-HTTP-Method-Override: ' . $method));
+
+  } else {
+
+    // It's a POST request, so add in some additional data
+    $data['time'] = $time;
+    $data['key'] = $apiPublicKey;
+
+    // Hash the data
+    $data['hash'] = hash_hmac("sha256", $apiUrl . $apiCall . "?" . http_build_query($data), $apiPrivateKey);
+
+    // Setup the remainder of the cURL request
+    curl_setopt($c, CURLOPT_URL, $apiUrl . $apiCall);
+    curl_setopt($c, CURLOPT_POST, true);
+    curl_setopt($c, CURLOPT_POSTFIELDS, http_build_query($data));
+
+  }
+
+  // Execute the API call and return the response
+  $result = curl_exec($c);
+  curl_close($c);
+
+  // Return the results of the API call
+  return json_decode($result);
+
+}
+
+?></pre>
+
+            <script type="text/javascript">
+
+                $(document).ready(function () {
+
+                    $('.reference a').on('click', function (event) {
+                        event.preventDefault();
+                        var aid = $(this).attr('href');
+                        $('html,body').animate({scrollTop: $("a" + aid).offset().top - 95}, 'slow');
+                    });
+
+                });
+
+            </script>
+
